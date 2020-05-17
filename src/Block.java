@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 public class Block {
-    private String hashPrevBlock;
+    private String hashPrevBlock ;
     private String hashMerkleRoot;
     private Timestamp timestamp;
     private int nonce = 0;
@@ -27,6 +27,8 @@ public class Block {
     public Block(Block previous, List<Transaction> txList) throws NoSuchAlgorithmException {
         if(previous != null){
             hashPrevBlock = previous.getHash();
+        }else{
+            hashPrevBlock = "";
         }
         String transactionHashAccu = "";
         for(int i =0;i<txList.size();i++){
@@ -40,7 +42,7 @@ public class Block {
     }
 
     public String getHash() throws NoSuchAlgorithmException {
-       byte[] hash = convToHash(hashPrevBlock + hashMerkleRoot + timestamp.toString() +Integer.toString(nonce));
+       byte[] hash = convToHash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + Integer.toString(nonce));
        return bytesToHex(hash);
     }
 }
