@@ -8,23 +8,11 @@ public class Block {
     private String hashPrevBlock ;
     private String hashMerkleRoot;
     private Timestamp timestamp;
+    private String headerHash;
     private int nonce = 0;
     boolean state = false;
-    private static String bytesToHex(byte[] hash) {
-        StringBuffer hexString = new StringBuffer();
-        for (int i = 0; i < hash.length; i++) {
-            String hex = Integer.toHexString(0xff & hash[i]);
-            if(hex.length() == 1) hexString.append('0');
-            hexString.append(hex);
-        }
-        return hexString.toString();
-    }
-    private static byte [] convToHash(String message) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] encodedhash = digest.digest(message.getBytes(StandardCharsets.UTF_8));
-        return encodedhash;
-    }
-    public Block(Block previous, List<Transaction> txList) throws NoSuchAlgorithmException {
+
+    public Block(Block previous, List<Transaction> txList){
         if(previous != null){
             hashPrevBlock = previous.getHash();
         }else{
@@ -34,15 +22,16 @@ public class Block {
         for(int i =0;i<txList.size();i++){
             transactionHashAccu += txList.get(i).getHash();
         }
-        byte [] hash = convToHash(transactionHashAccu);
-        hashMerkleRoot = bytesToHex(hash);
+        hashMerkleRoot = SHA256.hash(transactionHashAccu);
+        headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
     }
-    public Block(List <Transaction> txList) throws NoSuchAlgorithmException {
+
+
+    public Block(List<Transaction> txList){
         this(null , txList);
     }
 
-    public String getHash() throws NoSuchAlgorithmException {
-       byte[] hash = convToHash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + Integer.toString(nonce));
-       return bytesToHex(hash);
+    public String getHash(){
+       return this.headerHash;
     }
 }
