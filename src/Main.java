@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -21,6 +22,8 @@ public class Main {
     public static void main(String[] args) throws NoSuchAlgorithmException {
         Timestamp t = new Timestamp(System.currentTimeMillis());
         System.out.println(t.toString());
+        String bg =  new BigInteger(SHA256.hash("1234567890abcdefo"), 16).toString(2);
+        System.out.println(bg.length());
 
     }
 }

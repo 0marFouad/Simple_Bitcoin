@@ -31,6 +31,15 @@ public class Block {
         this(null , txList);
     }
 
+    public void incrementNonce(){
+        this.nonce += 1;
+        headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
+    }
+
+    public int getNonce(){
+        return nonce;
+    }
+
     public String getHash(){
        return this.headerHash;
     }
