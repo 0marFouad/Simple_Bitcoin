@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="adding txs dummy class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589711329766</updated>
-      <workItem from="1589711331037" duration="1306000" />
+      <workItem from="1589711331037" duration="1548000" />
     </task>
     <task id="LOCAL-00001" summary="adding txs dummy class">
       <created>1589711677894</created>
@@ -79,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589711677894</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="check connection">
+      <created>1589713003250</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589713003250</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,6 +103,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding txs dummy class" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding txs dummy class" />
+    <MESSAGE value="check connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="check connection" />
   </component>
 </project>
