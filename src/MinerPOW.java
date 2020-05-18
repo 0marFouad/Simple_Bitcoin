@@ -25,4 +25,14 @@ public class MinerPOW {
         //Here we will broadcast BLOCK [SUCCESS CASE]
     }
 
+    private boolean isValid(){
+        String hash = block.getHash();
+        String bits =  new BigInteger(hash, 16).toString(2);
+        String target = "";
+        for(int i=0;i<difficulty;i++){
+            target += '0';
+        }
+        return bits.substring(0,difficulty).equals(target);
+    }
+
 }
