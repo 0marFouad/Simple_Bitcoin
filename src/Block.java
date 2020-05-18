@@ -20,7 +20,7 @@ public class Block {
         this.txList = txList;
         headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
     }
-    public Block(Block previous, List<Transaction> txList){
+    public Block(Block previous, List<Transaction> txList) throws NoSuchAlgorithmException {
         this.txList = txList;
         timestamp =  new Timestamp(System.currentTimeMillis());
         if(previous != null){
@@ -36,7 +36,7 @@ public class Block {
     }
 
 
-    public Block(List<Transaction> txList){
+    public Block(List<Transaction> txList) throws NoSuchAlgorithmException {
         this(null , txList);
     }
 
@@ -53,7 +53,7 @@ public class Block {
        return this.headerHash;
     }
 
-    public boolean validateHashMerkle (){
+    public boolean validateHashMerkle () throws NoSuchAlgorithmException {
         String transactionHashAccu = "";
         for(int i =0;i<txList.size();i++){
             transactionHashAccu += txList.get(i).getHash();
