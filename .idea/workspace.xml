@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MinerBFT.java" afterDir="false" />
+    <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="merge and push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
     </list>
@@ -73,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1589711329766</updated>
       <workItem from="1589711331037" duration="10311000" />
-      <workItem from="1589791873915" duration="951000" />
+      <workItem from="1589791873915" duration="2489000" />
     </task>
     <task id="LOCAL-00001" summary="adding txs dummy class">
       <created>1589711677894</created>
@@ -124,7 +123,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589717637248</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add merkle validation">
+      <created>1589792855635</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589792855635</updated>
+    </task>
+    <task id="LOCAL-00009" summary="merge and push">
+      <created>1589792922528</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589792922528</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +162,8 @@
     <MESSAGE value="check connection2" />
     <MESSAGE value="block architecture" />
     <MESSAGE value="block architecture fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="block architecture fix" />
+    <MESSAGE value="add merkle validation" />
+    <MESSAGE value="merge and push" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge and push" />
   </component>
 </project>

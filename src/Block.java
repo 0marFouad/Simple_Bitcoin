@@ -16,7 +16,7 @@ public class Block {
     private Block parent;
     private ArrayList<Block> children;
     List <Transaction > txList;
-
+    int level = 0;
     public Block(String hashPrevBlock , String hashMerkleRoot, Timestamp timestamp, int nonce, List <Transaction> txList){
         this.hashPrevBlock = hashPrevBlock;
         this.hashMerkleRoot = hashMerkleRoot;
@@ -31,14 +31,17 @@ public class Block {
         timestamp =  new Timestamp(System.currentTimeMillis());
         if(previous != null){
             hashPrevBlock = previous.getHash();
+            level = previous.level +1;
         }else{
             hashPrevBlock = "";
+            level = 1;
         }
         String transactionHashAccu = "";
         for(int i =0;i<txList.size();i++){
             transactionHashAccu += txList.get(i).getHash();
         }
         hashMerkleRoot = SHA256.hash(transactionHashAccu);
+
     }
 
     public Block(List<Transaction> txList) throws NoSuchAlgorithmException {
@@ -76,13 +79,14 @@ public class Block {
         children.add(child);
     }
 
-    public boolean validatePrevHeaderHash (HashMap<String, Block> blockChain){
+    public boolean validatePrevHeaderHash (HashMap<String, Block> blockChain){ // must be last validation done
         if(!blockChain.containsKey(this.hashPrevBlock)){
             return false;
         }else{
             Block parent = blockChain.get(this.hashPrevBlock);
             this.parent = parent;
             parent.addChild(this);
+            level = parent.level +1;
             return true;
         }
     }
