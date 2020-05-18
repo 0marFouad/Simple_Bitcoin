@@ -11,8 +11,18 @@ public class Block {
     private String headerHash;
     private int nonce = 0;
     boolean state = false;
-
-    public Block(Block previous, List<Transaction> txList){
+    List <Transaction > txList ;
+    public Block(String hashPrevBlock , String hashMerkleRoot, Timestamp timestamp, int nonce, List <Transaction> txList){
+        this.hashPrevBlock = hashPrevBlock;
+        this.hashMerkleRoot = hashMerkleRoot;
+        this.timestamp = timestamp;
+        this.nonce = nonce;
+        this.txList = txList;
+        headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
+    }
+    public Block(Block previous, List<Transaction> txList) throws NoSuchAlgorithmException {
+        this.txList = txList;
+        timestamp =  new Timestamp(System.currentTimeMillis());
         if(previous != null){
             hashPrevBlock = previous.getHash();
         }else{
@@ -23,17 +33,16 @@ public class Block {
             transactionHashAccu += txList.get(i).getHash();
         }
         hashMerkleRoot = SHA256.hash(transactionHashAccu);
-        headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
     }
 
 
-    public Block(List<Transaction> txList){
+    public Block(List<Transaction> txList) throws NoSuchAlgorithmException {
         this(null , txList);
     }
 
     public void incrementNonce(){
-        this.nonce += 1;
         headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
+        this.nonce += 1;
     }
 
     public int getNonce(){
@@ -43,4 +52,15 @@ public class Block {
     public String getHash(){
        return this.headerHash;
     }
+
+    public boolean validateHashMerkle () throws NoSuchAlgorithmException {
+        String transactionHashAccu = "";
+        for(int i =0;i<txList.size();i++){
+            transactionHashAccu += txList.get(i).getHash();
+        }
+        String hashMerkleRootExpected = SHA256.hash(transactionHashAccu);
+        return hashMerkleRootExpected.equals(hashMerkleRoot);
+    }
+
+
 }
