@@ -11,7 +11,6 @@ public class TxInput {
 
     public TxInput(String[] strings) throws NoSuchAlgorithmException {
 
-
         // First element in array is previous transaction id
         this.prevTransactionId = Integer.parseInt(strings[0].split(":")[1]);
 

@@ -1,7 +1,4 @@
-import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
-import java.security.PublicKey;
-import java.security.SecureRandom;
+import java.security.*;
 
 public class TxOutput {
 
@@ -16,10 +13,14 @@ public class TxOutput {
 
         // Second element in array is the receiver public key
         String index = strings[1].split(":")[1];
-        KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
-        SecureRandom secureRand = new SecureRandom(index.getBytes());
-        keyPairGen.initialize(1024, secureRand);
-        this.receiver = keyPairGen.generateKeyPair().getPublic();
+        KeyPair client = Clients.clients.getOrDefault(Integer.parseInt(index), null);
+        if (client == null) {
+            KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
+            keyPairGen.initialize(1024, new SecureRandom(index.getBytes()));
+            client = keyPairGen.generateKeyPair();
+            Clients.clients.put(Integer.parseInt(index), client);
+        }
+        this.receiver = client.getPublic();
 
 
     }
