@@ -17,6 +17,7 @@ public class Block {
     private ArrayList<Block> children;
     List <Transaction > txList;
     int level = 0;
+    public static final int TransactionSize = 50;
     public Block(String hashPrevBlock , String hashMerkleRoot, Timestamp timestamp, int nonce, List <Transaction> txList){
         this.hashPrevBlock = hashPrevBlock;
         this.hashMerkleRoot = hashMerkleRoot;
@@ -26,7 +27,7 @@ public class Block {
         headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
     }
 
-    public Block(Block previous, List<Transaction> txList) throws NoSuchAlgorithmException {
+    public Block(Block previous, List<Transaction> txList) throws NoSuchAlgorithmException { // transaction list must be validated
         this.txList = txList;
         timestamp =  new Timestamp(System.currentTimeMillis());
         if(previous != null){
@@ -86,8 +87,14 @@ public class Block {
             Block parent = blockChain.get(this.hashPrevBlock);
             this.parent = parent;
             parent.addChild(this);
-            level = parent.level +1;
+            level = parent.level + 1;
             return true;
         }
+    }
+
+    public boolean validateTransactionSize(){
+        if(txList.size() != TransactionSize)
+            return false;
+        return true;
     }
 }
