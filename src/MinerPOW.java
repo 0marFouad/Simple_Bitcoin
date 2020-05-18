@@ -4,8 +4,9 @@ public class MinerPOW {
     private int difficulty;
     private Block block;
 
-    MinerPOW(int difficulty){
+    MinerPOW(int difficulty, Block block){
         this.difficulty = difficulty;
+        this.block = block;
         mine();
     }
 
