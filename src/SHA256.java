@@ -45,7 +45,7 @@ public class SHA256 {
         return block.getHash();
     }
 
-    public static String hash(Transaction transaction){
+    public static String hash(Transaction transaction) throws NoSuchAlgorithmException {
         return transaction.getHash();
     }
 }
