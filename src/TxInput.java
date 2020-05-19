@@ -1,16 +1,16 @@
+import java.io.Serializable;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.security.SecureRandom;
 
-public class TxInput {
+public class TxInput implements Serializable {
 
     private final int prevTransactionId;
     private final int outputIndex;
 
 
     public TxInput(String[] strings) throws NoSuchAlgorithmException {
-
 
         // First element in array is previous transaction id
         this.prevTransactionId = Integer.parseInt(strings[0].split(":")[1]);

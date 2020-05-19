@@ -1,18 +1,25 @@
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
 
-public class Transaction {
+public class Transaction implements Serializable {
 
     List<TxInput> inputs;
     List<TxOutput> outputs;
-    private final String senderIndex;
+    private final int senderIndex;
     private byte[] signature;
-    int id;
+
+    public int getId() {
+        return id;
+    }
+
+    private int id;
     int inputCount;
     int outputCount;
     boolean isValid;
@@ -20,20 +27,26 @@ public class Transaction {
 
 
     public Transaction(String[] transactionStrings) throws NoSuchAlgorithmException {
+        inputs = new ArrayList<>();
+        outputs = new ArrayList<>();
+
         this.id = Integer.parseInt(transactionStrings[0]);
 
         // Public key for the sender and its index
         String index = transactionStrings[1].split(":")[1];
-        this.senderIndex = index;
+        this.senderIndex = Integer.parseInt(index);
 
-        KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
-        SecureRandom secureRand = new SecureRandom(index.getBytes());
-        keyPairGen.initialize(1024, secureRand);
-        this.sender = keyPairGen.generateKeyPair().getPublic();
+        KeyPair client = Clients.clients.getOrDefault(Integer.parseInt(index), null);
+        if (client == null) {
+            KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
+            keyPairGen.initialize(1024, new SecureRandom(index.getBytes()));
+            client = keyPairGen.generateKeyPair();
+            Clients.clients.put(Integer.parseInt(index), client);
+        }
+        this.sender = client.getPublic();
 
-        for (int i = 2; i < transactionStrings.length; i++) {
-            boolean b3 = Pattern.matches(".s", "as");
-            if (Pattern.matches("output[0-9][a-zA-Z0-9]*", transactionStrings[i])) {
+        for (int i = 2; i < transactionStrings.length; i += 2) {
+            if (Pattern.matches("value[0-9]:.*", transactionStrings[i])) {
                 TxOutput output = new TxOutput(Arrays.copyOfRange(transactionStrings, i, i + 2));
                 outputs.add(output);
             } else {
@@ -69,35 +82,38 @@ public class Transaction {
 
         String key = txInput.toString();
         TxOutput value = txMap.get(key);
-        return value.receiver.equals(this.sender);
+        return Utils.bytesToHex(value.receiver.getEncoded()).equals(Utils.bytesToHex(this.sender.getEncoded()));
 
     }
 
-    private boolean verifySignature() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+    public boolean verifySignature() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+        PublicKey publicKey = Clients.clients.get(senderIndex).getPublic();
 
-        byte[] hash = this.getHash().getBytes();
         Signature sign = Signature.getInstance("SHA256withRSA");
-        sign.initVerify(this.sender);
-        sign.update(hash);
-        return sign.verify(this.signature);
+        byte[] bytes = this.getHash().getBytes();
+
+        sign.initVerify(publicKey);
+        sign.update(bytes);
+
+        //Verifying the signature
+        return sign.verify(signature);
 
     }
 
     private byte[] generateSignature() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
 
-        KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
-        SecureRandom secureRand = new SecureRandom(this.senderIndex.getBytes());
-        keyPairGen.initialize(1024, secureRand);
-        PrivateKey privateKey = keyPairGen.generateKeyPair().getPrivate();
-        byte[] hash = this.getHash().getBytes();
+        PrivateKey privateKey = Clients.clients.get(senderIndex).getPrivate();
         Signature sign = Signature.getInstance("SHA256withRSA");
+
+        //Initializing the signature
         sign.initSign(privateKey);
         byte[] bytes = this.getHash().getBytes();
+
         //Adding data to the signature
         sign.update(bytes);
+
         //Calculating the signature
         return sign.sign();
-
     }
 
     public void setSignature() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
@@ -108,7 +124,7 @@ public class Transaction {
 
         MessageDigest msgDigest = MessageDigest.getInstance("SHA-256");
         String input = String.valueOf(id) + inputCount + inputs;
-        return msgDigest.digest(input.getBytes(StandardCharsets.UTF_8)).toString();
+        return Arrays.toString(msgDigest.digest(input.getBytes(StandardCharsets.UTF_8)));
 
     }
 
