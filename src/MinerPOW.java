@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 
 public class MinerPOW implements Runnable {
-    private int difficulty;
+    private final int difficulty;
     private Block block;
 
     MinerPOW(int difficulty, Block block) {
@@ -17,15 +17,15 @@ public class MinerPOW implements Runnable {
         for (int i = 0; i < difficulty; i++) {
             target += '0';
         }
-        // here put !thread.interrupted()
         // interrupted means received a block and this block is valid
-        while (bits.substring(0, difficulty).equals(target)) {
+        //We need to check every loop that this BLOCK was not successfully mined by another peer
+        while (!Thread.interrupted() && bits.substring(0, difficulty).equals(target)) {
             block.incrementNonce();
             hash = block.getHash();
             bits = new BigInteger(hash, 16).toString(2);
         }
-        //We need to check every loop that this BLOCK was not successfully mined by another peer
         //Here we will broadcast BLOCK [SUCCESS CASE]
+        //TODO broadcast
     }
 
     private boolean isValid() {

@@ -14,11 +14,6 @@ public class Transaction implements Serializable {
     List<TxOutput> outputs;
     private final int senderIndex;
     private byte[] signature;
-
-    public int getId() {
-        return id;
-    }
-
     private int id;
     int inputCount;
     int outputCount;
@@ -128,5 +123,14 @@ public class Transaction implements Serializable {
 
     }
 
+    public int getId() {
+        return id;
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj.getClass() != Transaction.class)
+            return false;
+        return this.getId() == ((Transaction) obj).getId();
+    }
 }

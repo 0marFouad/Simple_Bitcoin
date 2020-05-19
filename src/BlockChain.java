@@ -7,11 +7,10 @@ public class BlockChain {
 
     int blockSize;
     LinkedList<Block> chain;
-    //TODO discuss this
-    LinkedList<List<Transaction>> transactionPool;
+    List<Transaction> pendingTransactions;
+    List<Transaction> transactionPool;
     Map<String, TxOutput> prevTransactions;
     int length;
-    //TODO discuss this
     private Thread miningThread;
 
     public BlockChain(int blockSize) {
@@ -27,22 +26,12 @@ public class BlockChain {
         if (isValid) {
             updatePrevTransactions(prevTransactions, transaction);
             addOutputsToMap(prevTransactions, transaction);
-            addIntoPool(transactionPool, transaction);
-            if (transactionPool.getFirst().size() == blockSize)
+            transactionPool.add(transaction);
+            if (transactionPool.size() >= blockSize)
                 this.startMiningNewBlock();
         }
         return isValid;
 
-    }
-
-    private void addIntoPool(LinkedList<List<Transaction>> transactionPool, Transaction transaction) {
-        if (transactionPool.getLast().size() < blockSize)
-            transactionPool.getLast().add(transaction);
-        else {
-            List<Transaction> newPool = new ArrayList<>();
-            newPool.add(transaction);
-            transactionPool.addLast(newPool);
-        }
     }
 
     private void updatePrevTransactions(Map<String, TxOutput> prevTransactions, Transaction transaction) {
@@ -53,8 +42,13 @@ public class BlockChain {
     }
 
     private void startMiningNewBlock() throws NoSuchAlgorithmException {
-        List<Transaction> list = transactionPool.removeFirst();
-        Block newBlock = new Block(chain.getLast(), list);
+        pendingTransactions = transactionPool.subList(0, blockSize);
+        if (transactionPool.size() > blockSize) {
+            transactionPool = transactionPool.subList(blockSize - 1, transactionPool.size());
+        } else {
+            transactionPool = new ArrayList<>();
+        }
+        Block newBlock = new Block(chain.getLast(), pendingTransactions);
         miningThread = new Thread(new MinerPOW(3, newBlock));
         miningThread.start();
 
@@ -71,6 +65,29 @@ public class BlockChain {
         for (int i = 1; i <= transaction.outputs.size(); i++) {
             prevTransactions.put(key + i, transaction.outputs.get(i - 1));
         }
+
+    }
+
+    private void addMyBlock(Block newBlock) {
+        pendingTransactions = new ArrayList<>();
+        chain.add(newBlock);
+    }
+
+    private void addReceivedBlock(Block newBlock) {
+        if (newBlock.isValidBlock()) {
+            stopMining();
+            checkDifferentTransaction(newBlock);
+            chain.add(newBlock);
+        }
+    }
+
+    private void checkDifferentTransaction(Block newBlock) {
+
+//        for (Transaction :
+//             ) {
+//
+//        }
+//
 
     }
 
