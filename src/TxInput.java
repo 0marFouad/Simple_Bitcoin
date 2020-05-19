@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.security.SecureRandom;
 
-public class TxInput {
+public class TxInput implements Serializable {
 
     private final int prevTransactionId;
     private final int outputIndex;

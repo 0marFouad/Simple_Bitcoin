@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.security.*;
 
-public class TxOutput {
+public class TxOutput implements Serializable {
 
     double value;
     PublicKey receiver;

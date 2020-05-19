@@ -11,7 +11,7 @@ class TransactionTest {
         String[] splits = transactionLine.split("\t");
         Transaction transaction = new Transaction(splits);
         assertNotNull(transaction);
-        assertEquals(transaction.id, 50);
+        assertEquals(transaction.getId(), 50);
 
         KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
         SecureRandom secureRand = new SecureRandom("41".getBytes());
@@ -44,7 +44,7 @@ class TransactionTest {
         String[] splits = transactionLine.split("\t");
         Transaction transaction = new Transaction(splits);
         assertNotNull(transaction);
-        assertEquals(transaction.id, 71);
+        assertEquals(transaction.getId(), 71);
 
         KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
         SecureRandom secureRand = new SecureRandom("26".getBytes());

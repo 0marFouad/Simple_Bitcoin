@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 
-public class Transaction {
+public class Transaction implements Serializable {
 
     List<TxInput> inputs;
     List<TxOutput> outputs;

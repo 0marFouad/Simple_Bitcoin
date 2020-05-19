@@ -24,42 +24,17 @@ public class Main {
         return encodedhash;
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, SignatureException {
-        //Creating KeyPair generator object
-        KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
+    public static void main(String[] args) throws InterruptedException {
 
-        //Generate the pair of keys
-        KeyPair pair = keyPairGen.generateKeyPair();
+        Runnable runnable1 = new Server();
+        Thread threadServer = new Thread(runnable1);
+        Runnable runnable2 = new Client();
+        Thread threadClient = new Thread(runnable2);
 
-        Clients.clients.put(0, pair);
+        threadServer.start();
+        Thread.sleep(4000);
+        threadClient.start();
 
-        //Creating a Signature object
-        Signature sign = Signature.getInstance("SHA256withRSA");
-
-        //Initializing the signature
-        sign.initSign(Clients.clients.get(0).getPrivate());
-        byte[] bytes = "Hello how are you".getBytes();
-
-        //Adding data to the signature
-        sign.update(bytes);
-
-        //Calculating the signature
-        byte[] signature = sign.sign();
-
-        //Initializing the signature
-        Signature sign1 = Signature.getInstance("SHA256withRSA");
-
-        sign1.initVerify(Clients.clients.get(0).getPublic());
-        sign1.update(bytes);
-
-        //Verifying the signature
-        boolean bool = sign1.verify(signature);
-
-        if (bool) {
-            System.out.println("Signature verified");
-        } else {
-            System.out.println("Signature failed");
-        }
 
     }
 }
