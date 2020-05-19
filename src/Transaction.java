@@ -13,7 +13,12 @@ public class Transaction {
     List<TxOutput> outputs;
     private final int senderIndex;
     private byte[] signature;
-    int id;
+
+    public int getId() {
+        return id;
+    }
+
+    private int id;
     int inputCount;
     int outputCount;
     boolean isValid;
