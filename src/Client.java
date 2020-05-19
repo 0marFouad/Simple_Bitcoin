@@ -10,7 +10,14 @@ public class Client implements Runnable {
     private Socket socket = null;
     private DataInputStream input = null;
     private ObjectOutputStream out = null;
+    private String addr_ip;
+    private Integer addr_port;
 
+
+    public Client(String address){
+        this.addr_ip = address.split("/")[0];
+        this.addr_port = Integer.parseInt(address.split("/")[1]);
+    }
 
     // constructor to put ip address and port
     public void client(String address, int port) throws IOException {
@@ -59,7 +66,7 @@ public class Client implements Runnable {
     @Override
     public void run() {
         try {
-            this.client("127.0.0.1",5000);
+            this.client(addr_ip, addr_port);
         } catch (IOException e) {
             e.printStackTrace();
         }

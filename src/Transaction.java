@@ -31,12 +31,12 @@ public class Transaction implements Serializable {
         String index = transactionStrings[1].split(":")[1];
         this.senderIndex = Integer.parseInt(index);
 
-        KeyPair client = Clients.clients.getOrDefault(Integer.parseInt(index), null);
+        KeyPair client = Network.peers.getOrDefault(Integer.parseInt(index), null);
         if (client == null) {
             KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
             keyPairGen.initialize(1024, new SecureRandom(index.getBytes()));
             client = keyPairGen.generateKeyPair();
-            Clients.clients.put(Integer.parseInt(index), client);
+            Network.peers.put(Integer.parseInt(index), client);
         }
         this.sender = client.getPublic();
 
@@ -82,7 +82,7 @@ public class Transaction implements Serializable {
     }
 
     public boolean verifySignature() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
-        PublicKey publicKey = Clients.clients.get(senderIndex).getPublic();
+        PublicKey publicKey = Network.peers.get(senderIndex).getPublic();
 
         Signature sign = Signature.getInstance("SHA256withRSA");
         byte[] bytes = this.getHash().getBytes();
@@ -97,7 +97,7 @@ public class Transaction implements Serializable {
 
     private byte[] generateSignature() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
 
-        PrivateKey privateKey = Clients.clients.get(senderIndex).getPrivate();
+        PrivateKey privateKey = Network.peers.get(senderIndex).getPrivate();
         Signature sign = Signature.getInstance("SHA256withRSA");
 
         //Initializing the signature

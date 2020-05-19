@@ -9,6 +9,11 @@ public class Server implements Runnable {
     private Socket socket = null;
     private ServerSocket server = null;
     private ObjectInputStream in = null;
+    private Integer port;
+
+    public Server(Integer given_port){
+        this.port = given_port;
+    }
 
     // constructor with port
     public void server(int port) {
@@ -56,6 +61,6 @@ public class Server implements Runnable {
 
     @Override
     public void run() {
-        this.server(4000);
+        this.server(this.port);
     }
 }

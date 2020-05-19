@@ -31,7 +31,6 @@ public class BlockChain {
                 this.startMiningNewBlock();
         }
         return isValid;
-
     }
 
     private void updatePrevTransactions(Map<String, TxOutput> prevTransactions, Transaction transaction) {

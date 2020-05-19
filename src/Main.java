@@ -26,9 +26,9 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Runnable runnable1 = new Server();
+        Runnable runnable1 = new Server(4000);
         Thread threadServer = new Thread(runnable1);
-        Runnable runnable2 = new Client();
+        Runnable runnable2 = new Client("127.0.0.1/5000");
         Thread threadClient = new Thread(runnable2);
 
         threadServer.start();
