@@ -32,7 +32,6 @@ public class BlockChain {
                 this.startMiningNewBlock();
         }
         return isValid;
-
     }
 
     private void addIntoPool(LinkedList<List<Transaction>> transactionPool, Transaction transaction) {

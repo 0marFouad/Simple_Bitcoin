@@ -25,15 +25,15 @@ class TransactionTest {
         secureRand = new SecureRandom("47".getBytes());
         keyPairGen.initialize(1024, secureRand);
         assertEquals(transaction.outputs.get(0).value, 0.6444474);
-        assertEquals(Utils.bytesToHex(transaction.outputs.get(0).receiver.getEncoded()), Utils.bytesToHex(Clients.clients.get(47).getPublic().getEncoded()));
+        assertEquals(Utils.bytesToHex(transaction.outputs.get(0).receiver.getEncoded()), Utils.bytesToHex(Network.clients.get(47).getPublic().getEncoded()));
 
         secureRand = new SecureRandom("46".getBytes());
         keyPairGen.initialize(1024, secureRand);
         assertEquals(transaction.outputs.get(1).value, 10.64253);
-        assertEquals(Utils.bytesToHex(transaction.outputs.get(1).receiver.getEncoded()), Utils.bytesToHex(Clients.clients.get(46).getPublic().getEncoded()));
+        assertEquals(Utils.bytesToHex(transaction.outputs.get(1).receiver.getEncoded()), Utils.bytesToHex(Network.clients.get(46).getPublic().getEncoded()));
 
         assertEquals(transaction.outputs.get(2).value, 5.213972);
-        assertEquals(Utils.bytesToHex(transaction.outputs.get(2).receiver.getEncoded()), Utils.bytesToHex(Clients.clients.get(41).getPublic().getEncoded()));
+        assertEquals(Utils.bytesToHex(transaction.outputs.get(2).receiver.getEncoded()), Utils.bytesToHex(Network.clients.get(41).getPublic().getEncoded()));
 
     }
 
@@ -57,13 +57,13 @@ class TransactionTest {
         assertEquals(transaction.inputs.get(0).getOutputIndex(), 1);
 
         assertEquals(transaction.outputs.get(0).value, 3.4163618);
-        assertEquals(Utils.bytesToHex(transaction.outputs.get(0).receiver.getEncoded()), Utils.bytesToHex(Clients.clients.get(47).getPublic().getEncoded()));
+        assertEquals(Utils.bytesToHex(transaction.outputs.get(0).receiver.getEncoded()), Utils.bytesToHex(Network.clients.get(47).getPublic().getEncoded()));
 
         assertEquals(transaction.outputs.get(1).value, 3.652896);
-        assertEquals(Utils.bytesToHex(transaction.outputs.get(1).receiver.getEncoded()), Utils.bytesToHex(Clients.clients.get(27).getPublic().getEncoded()));
+        assertEquals(Utils.bytesToHex(transaction.outputs.get(1).receiver.getEncoded()), Utils.bytesToHex(Network.clients.get(27).getPublic().getEncoded()));
 
         assertEquals(transaction.outputs.get(2).value, 3.347314);
-        assertEquals(Utils.bytesToHex(transaction.outputs.get(2).receiver.getEncoded()), Utils.bytesToHex(Clients.clients.get(26).getPublic().getEncoded()));
+        assertEquals(Utils.bytesToHex(transaction.outputs.get(2).receiver.getEncoded()), Utils.bytesToHex(Network.clients.get(26).getPublic().getEncoded()));
 
     }
 
