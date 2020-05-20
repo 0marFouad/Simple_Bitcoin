@@ -12,6 +12,7 @@ public class Network implements Runnable {
     private ArrayList<Runnable> runnableServer;
     private ArrayList<Thread> threadServer;
     private ArrayList<Client> clients;
+    private static final Network instance = new Network();
 
 
     final private Integer SERVER_PORT = 5000;
@@ -21,8 +22,16 @@ public class Network implements Runnable {
     final private String NODE3 = "127.0.0.1/7000";
 
 
+    public static Network getInstance() {
+        if (instance == null) {
+            return new Network();
+        } else {
+            return instance;
+        }
+    }
 
-    public Network() throws IOException {
+
+    private Network() {
         connectedDevices = new ArrayList<>();
         connectedDevices.add(NODE2);
         connectedDevices.add(NODE3);

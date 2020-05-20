@@ -25,29 +25,13 @@ public class Main {
         return encodedhash;
     }
 
-    public static void main(String[] args) throws InterruptedException {
-
-//        Runnable runnable1 = new Server(4000);
-//        Thread threadServer = new Thread(runnable1);
-//        Runnable runnable2 = new Client("127.0.0.1/5000");
-//        Thread threadClient = new Thread(runnable2);
-//
-//        threadServer.start();
-//        Thread.sleep(4000);
-//        threadClient.start();
-
-        try {
-            Network n = new Network();
-            Thread t = new Thread(n);
-            t.start();
-            n.intiateClientConnection();
-            Test test = new Test();
-            test.value = 1;
-            n.broadcast("test", test);
-        } catch (IOException  e) {
-            e.printStackTrace();
-        }
-
-
+    public static void main(String[] args) {
+        Network n = Network.getInstance();
+        Thread t = new Thread(n);
+        t.start();
+        n.intiateClientConnection();
+        Test test = new Test();
+        test.value = 1;
+        n.broadcast("test", test);
     }
 }
