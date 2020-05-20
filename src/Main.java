@@ -10,21 +10,6 @@ import java.sql.Timestamp;
 import java.util.Base64;
 
 public class Main {
-    public static String bytesToHex(byte[] hash) {
-        StringBuffer hexString = new StringBuffer();
-        for (int i = 0; i < hash.length; i++) {
-            String hex = Integer.toHexString(0xff & hash[i]);
-            if (hex.length() == 1) hexString.append('0');
-            hexString.append(hex);
-        }
-        return hexString.toString();
-    }
-
-    private static byte[] convToHash(String message) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] encodedhash = digest.digest(message.getBytes(StandardCharsets.UTF_8));
-        return encodedhash;
-    }
 
     public static void main(String[] args) throws InterruptedException {
         //Network n = Network.getInstance(Integer.parseInt(args[0]));
@@ -36,6 +21,7 @@ public class Main {
         TransactionSender txSender = new TransactionSender("txdataset_v2.txt");
         Thread tx = new Thread(txSender);
         tx.start();
+
 //        Test test = new Test();
 //        test.value = 1;
 //        n.broadcast("test", test);

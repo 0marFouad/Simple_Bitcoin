@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BlockChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MinerPOW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinerPOW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +57,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TransactionTest.testGenerateTransaction2InputInitial">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Simple_Bitcoin" />
@@ -113,8 +116,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TransactionTest.testGenerateTransaction2InputInitial" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TransactionTest.testGenerateTransaction2InputInitial" />
         <item itemvalue="JUnit.TransactionTest" />
         <item itemvalue="JUnit.TransactionTest.testGenerateTransaction" />
         <item itemvalue="Application.Server" />
@@ -274,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589991329255</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Transaction fixed.">
+      <created>1589991919174</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1589991919174</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +315,8 @@
     <MESSAGE value="some threads work done,added BlockChain class." />
     <MESSAGE value="TransactionSender done." />
     <MESSAGE value="NotNull removed." />
-    <option name="LAST_COMMIT_MESSAGE" value="NotNull removed." />
+    <MESSAGE value="Transaction fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Transaction fixed." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -325,10 +336,10 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/49.27.1317.741@49.27.1317.741" timestamp="1589813805517" />
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1589991329103">
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1589991919085">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1589991329103" />
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1589991919085" />
     <state x="149" y="125" width="1117" height="543" key="DiffContextDialog" timestamp="1589991885707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -337,22 +348,22 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1589818230231" />
-    <state width="1271" height="257" key="GridCell.Tab.0.bottom" timestamp="1589991839446">
+    <state width="1271" height="289" key="GridCell.Tab.0.bottom" timestamp="1590007898967">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="257" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1589991839446" />
-    <state width="1271" height="257" key="GridCell.Tab.0.center" timestamp="1589991839444">
+    <state width="1271" height="289" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1590007898967" />
+    <state width="1271" height="289" key="GridCell.Tab.0.center" timestamp="1590007898965">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="257" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1589991839444" />
-    <state width="1271" height="257" key="GridCell.Tab.0.left" timestamp="1589991839598">
+    <state width="1271" height="289" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1590007898965" />
+    <state width="1271" height="289" key="GridCell.Tab.0.left" timestamp="1590007898965">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="257" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1589991839598" />
-    <state width="1271" height="257" key="GridCell.Tab.0.right" timestamp="1589991839445">
+    <state width="1271" height="289" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1590007898965" />
+    <state width="1271" height="289" key="GridCell.Tab.0.right" timestamp="1590007898966">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="257" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1589991839445" />
+    <state width="1271" height="289" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1590007898966" />
     <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589989446853">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -361,10 +372,10 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589989446855" />
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589991361625">
+    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589991929476">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1589991361625" />
+    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1589991929476" />
     <state x="149" y="125" width="1117" height="543" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1589991885707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -377,14 +388,14 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="481" y="175" width="442" height="443" key="com.intellij.testIntegration.createTest.CreateTestDialog/49.27.1317.741@49.27.1317.741" timestamp="1589807444613" />
-    <state x="398" y="135" width="618" height="522" key="find.popup" timestamp="1589989401470">
+    <state x="398" y="135" width="618" height="522" key="find.popup" timestamp="1590007280997">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="398" y="135" width="618" height="522" key="find.popup/49.27.1317.741@49.27.1317.741" timestamp="1589989401470" />
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1589991353537">
+    <state x="398" y="135" width="618" height="522" key="find.popup/49.27.1317.741@49.27.1317.741" timestamp="1590007280997" />
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1589991923817">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1589991353537" />
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1589991923817" />
     <state x="49" y="27" width="1307" height="741" key="new project wizard" timestamp="1589893426932">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -401,11 +412,6 @@
           <url>file://$PROJECT_DIR$/src/Block.java</url>
           <line>71</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/TransactionTest.java</url>

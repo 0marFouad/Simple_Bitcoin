@@ -68,8 +68,10 @@ public class BlockChain {
     }
 
     public void stopMining() {
-        if (miningThread != null)
+        if (miningThread != null) {
             miningThread.interrupt();
+            miningThread = null;
+        }
     }
 
     private void addOutputsToMap(Transaction transaction) {

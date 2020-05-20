@@ -10,13 +10,13 @@ public class Server implements Runnable {
 
     //initialize socket and input stream
     private Socket socket = null;
-//    private ServerSocket server = null;
+    //    private ServerSocket server = null;
     private ObjectInputStream in = null;
 //    private Integer port;
 
 
     // constructor with port
-    public  Server(Socket socket) {
+    public Server(Socket socket) {
         // starts server and waits for a connection
         try {
             this.socket = socket;
@@ -36,8 +36,9 @@ public class Server implements Runnable {
                     Transaction tx = (Transaction) in.readObject();
                     System.out.println(tx.getId());
                     // add to transaction pool
-                    BlockChain.getInstance().addTransaction(tx);
-                }else if(token.equals("Block")){
+                    boolean accepted = BlockChain.getInstance().addTransaction(tx);
+                    System.out.println(tx.getId() + " " + accepted);
+                } else if (token.equals("Block")) {
                     Block block = (Block) in.readObject();
                     System.out.println(block.level);
                     // add to object pool

@@ -25,7 +25,8 @@ public class MinerPOW implements Runnable {
             bits = new BigInteger(hash, 16).toString(2);
         }
         //Here we will broadcast BLOCK [SUCCESS CASE]
-        //TODO broadcast
+        //TODO broadcast Done
+        Network.getInstance().broadcast("Block", block);
         //add to chain
         BlockChain.getInstance().addMyBlock(block);
 
