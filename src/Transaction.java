@@ -40,8 +40,14 @@ public class Transaction implements Serializable {
         }
         this.sender = client.getPublic();
 
+        // for initial input transactions
+        if (id == 0) {
+            String[] initialInput = {"0", "0"};
+            TxInput inputInitial = new TxInput(initialInput);
+            inputs.add(inputInitial);
+        }
         for (int i = 2; i < transactionStrings.length; i += 2) {
-            if (Pattern.matches("value[0-9]:.*", transactionStrings[i])) {
+            if (Pattern.matches("value[0-9]*:.*", transactionStrings[i])) {
                 TxOutput output = new TxOutput(Arrays.copyOfRange(transactionStrings, i, i + 2));
                 outputs.add(output);
             } else {
@@ -56,6 +62,8 @@ public class Transaction implements Serializable {
 
     public boolean isValidTransaction(Map<String, TxOutput> txMap) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
         for (int i = 0; i < inputCount; i++) {
+            if (inputs.get(i).getPrevTransactionId() == 0)
+                continue;
             boolean verifyInput = this.verifySenderInput(txMap, inputs.get(i));
 
             if (this.verifyDoublySpent(txMap, inputs.get(i))) {
@@ -77,7 +85,7 @@ public class Transaction implements Serializable {
 
         String key = txInput.toString();
         TxOutput value = txMap.get(key);
-        return Utils.bytesToHex(value.receiver.getEncoded()).equals(Utils.bytesToHex(this.sender.getEncoded()));
+        return SHA256.bytesToHex(value.receiver.getEncoded()).equals(SHA256.bytesToHex(this.sender.getEncoded()));
 
     }
 

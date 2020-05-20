@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class Block implements Serializable {
@@ -101,7 +102,26 @@ public class Block implements Serializable {
         return true;
     }
 
-    public boolean isValidBlock() {
-        return true;
+    public List<Transaction> getTxList() {
+        return txList;
+    }
+
+    public boolean isValidBlock(HashMap<String, Block> blockChain) throws NoSuchAlgorithmException {
+        if (validateHashMerkle())
+            return validatePrevHeaderHash(blockChain);
+        return false;
+    }
+
+    public List<Transaction> getNonValidateTransactions(HashSet<Integer> validatedTransactions) {
+
+        List<Transaction> list = new ArrayList<Transaction>();
+        for (Transaction tx : txList) {
+
+            if (!validatedTransactions.contains(tx.getId()))
+                list.add(tx);
+
+        }
+        return list;
+
     }
 }
