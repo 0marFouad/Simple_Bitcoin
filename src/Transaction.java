@@ -41,8 +41,8 @@ public class Transaction implements Serializable {
         this.sender = client.getPublic();
 
         // for initial input transactions
-        if (id == 0) {
-            String[] initialInput = {"0", "0"};
+        if (id < 50) {
+            String[] initialInput = {"previoustx:0", "outputIndex:0"};
             TxInput inputInitial = new TxInput(initialInput);
             inputs.add(inputInitial);
         }
