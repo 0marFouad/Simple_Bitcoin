@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -30,8 +31,12 @@ public class Main {
         Thread t = new Thread(n);
         t.start();
         n.intiateClientConnection();
-        Test test = new Test();
-        test.value = 1;
-        n.broadcast("test", test);
+        TransactionSender txSender = new TransactionSender("txdataset_v2.txt");
+        Thread tx = new Thread(txSender);
+        tx.start();
+//        System.out.println(System.getProperty("user.dir"));
+//        Test test = new Test();
+//        test.value = 1;
+//        n.broadcast("test", test);
     }
 }

@@ -1,4 +1,3 @@
-import org.jetbrains.annotations.NotNull;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -10,7 +9,7 @@ public class BlockChain {
     private static final int DIFFICULTY = 3;
     private static final int BLOCK_SIZE = 100;
 
-    private static final BlockChain instance = new BlockChain(BLOCK_SIZE);
+    private static BlockChain instance = null;
 
     private HashMap<String, Block> blockChain;
     private List<Transaction> transactionPool;
@@ -32,10 +31,10 @@ public class BlockChain {
 
     public static BlockChain getInstance() {
         if (instance == null) {
-            return new BlockChain(BLOCK_SIZE);
-        } else {
-            return instance;
+            instance = new BlockChain(BLOCK_SIZE);
         }
+        return instance;
+
     }
 
     public boolean addTransaction(Transaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {

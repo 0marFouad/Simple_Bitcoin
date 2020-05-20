@@ -12,7 +12,7 @@ public class Network implements Runnable {
     private ArrayList<Runnable> runnableServer;
     private ArrayList<Thread> threadServer;
     private ArrayList<Client> clients;
-    private static final Network instance = new Network();
+    private static Network instance = null;
 
 
     final private Integer SERVER_PORT = 5000;
@@ -24,10 +24,10 @@ public class Network implements Runnable {
 
     public static Network getInstance() {
         if (instance == null) {
-            return new Network();
-        } else {
-            return instance;
+            instance = new Network();
         }
+        return instance;
+
     }
 
 
