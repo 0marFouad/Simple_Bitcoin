@@ -1,3 +1,4 @@
+
 import org.jetbrains.annotations.NotNull;
 
 import java.security.InvalidKeyException;
@@ -31,10 +32,13 @@ public class BlockChain {
     }
 
     public static BlockChain getInstance() {
-        return Objects.requireNonNullElseGet(instance, () -> new BlockChain(BLOCK_SIZE));
+        if (instance == null)
+            return new BlockChain(BLOCK_SIZE);
+        else
+            return instance;
     }
 
-    public boolean addTransaction(@NotNull Transaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+    public boolean addTransaction(Transaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
         boolean isValid = transaction.isValidTransaction(prevTransactions);
         if (isValid) {
             processTransaction(transaction);
@@ -45,7 +49,7 @@ public class BlockChain {
         return isValid;
     }
 
-    private void updatePrevTransactions(@NotNull Transaction transaction) {
+    private void updatePrevTransactions(Transaction transaction) {
 
         for (TxInput input : transaction.inputs) {
             prevTransactions.remove(input.toString());
