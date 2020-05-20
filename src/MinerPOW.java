@@ -26,6 +26,9 @@ public class MinerPOW implements Runnable {
         }
         //Here we will broadcast BLOCK [SUCCESS CASE]
         //TODO broadcast
+        //add to chain
+        BlockChain.getInstance().addMyBlock(block);
+
     }
 
     private boolean isValid() {
@@ -41,7 +44,6 @@ public class MinerPOW implements Runnable {
 
     @Override
     public void run() {
-        //TODO complete this
         this.mine();
     }
 }

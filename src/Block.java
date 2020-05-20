@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -10,6 +12,8 @@ import java.util.List;
 
 public class Block implements Serializable {
 
+    public static final int TransactionSize = BlockChain.getDIFFICULTY();
+
     private String hashPrevBlock;
     private String hashMerkleRoot;
     private Timestamp timestamp;
@@ -18,11 +22,11 @@ public class Block implements Serializable {
     boolean state = false;
     private Block parent;
     private ArrayList<Block> children;
-    List<Transaction> txList;
+    private List<Transaction> txList;
     int level = 0;
-    public static final int TransactionSize = 50;
 
-    public Block(String hashPrevBlock, String hashMerkleRoot, Timestamp timestamp, int nonce, List<Transaction> txList) {
+
+    public Block(String hashPrevBlock, String hashMerkleRoot, @NotNull Timestamp timestamp, int nonce, List<Transaction> txList) {
         this.hashPrevBlock = hashPrevBlock;
         this.hashMerkleRoot = hashMerkleRoot;
         this.timestamp = timestamp;
@@ -66,19 +70,19 @@ public class Block implements Serializable {
         return this.headerHash;
     }
 
-    private  String makeMerkleHash(List <Transaction> txs) throws NoSuchAlgorithmException {
-        List <String> temp1 = new ArrayList();
-        for(int i =0;i<txs.size();i++){
+    private String makeMerkleHash(@NotNull List<Transaction> txs) throws NoSuchAlgorithmException {
+        List<String> temp1 = new ArrayList();
+        for (int i = 0; i < txs.size(); i++) {
             temp1.add(txs.get(i).getHash());
         }
-        while(temp1.size() != 1){
-            List <String> temp2  = new ArrayList<>();
-            for(int i=0;i< temp1.size();i+=2){
+        while (temp1.size() != 1) {
+            List<String> temp2 = new ArrayList<>();
+            for (int i = 0; i < temp1.size(); i += 2) {
                 String txAcc = "";
                 txAcc += temp1.get(i);
-                if(i+1 < txs.size()){
+                if (i + 1 < txs.size()) {
                     txAcc += txs.get(i + 1).getHash();
-                }else{
+                } else {
                     txAcc += txs.get(i).getHash();
                 }
                 temp2.add(SHA256.hash(txAcc));
@@ -87,6 +91,7 @@ public class Block implements Serializable {
         }
         return temp1.get(0);
     }
+
     public boolean validateHashMerkle() throws NoSuchAlgorithmException {
         String transactionHashAccu = "";
         for (int i = 0; i < txList.size(); i++) {
@@ -105,7 +110,7 @@ public class Block implements Serializable {
         children.add(child);
     }
 
-    public boolean validatePrevHeaderHash(HashMap<String, Block> blockChain) { // must be last validation done
+    public boolean validatePrevHeaderHash(@NotNull HashMap<String, Block> blockChain) { // must be last validation done
         if (!blockChain.containsKey(this.hashPrevBlock)) {
             return false;
         } else {
@@ -114,10 +119,11 @@ public class Block implements Serializable {
             return true;
         }
     }
-    public void addToTree(Block parent){
+
+    public void addToTree(@NotNull Block parent) {
         this.parent = parent;
         parent.addChild(this);
-        level = parent.level +1;
+        level = parent.level + 1;
     }
 
     public boolean validateTransactionSize() {
@@ -131,7 +137,7 @@ public class Block implements Serializable {
     }
 
     public boolean isValidBlock(HashMap<String, Block> blockChain) throws NoSuchAlgorithmException {
-        if (validateHashMerkle())
+        if (validateHashMerkle() && validateTransactionSize())
             return validatePrevHeaderHash(blockChain);
         return false;
     }

@@ -2,6 +2,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
 
 public class Server implements Runnable {
 
@@ -33,17 +36,19 @@ public class Server implements Runnable {
                     Transaction tx = (Transaction) in.readObject();
                     System.out.println(tx.inputCount);
                     // add to transaction pool
+                    BlockChain.getInstance().addTransaction(tx);
                 }else if(token.equals("Block")){
                     Block block = (Block) in.readObject();
                     System.out.println(block.level);
                     // add to object pool
-                }else{
-                    Test test =  (Test) in.readObject();
+                    BlockChain.getInstance().addReceivedBlock(block);
+                } else {
+                    Test test = (Test) in.readObject();
                     System.out.println(test.value);
                 }
             } catch (IOException i) {
                 System.out.println(i);
-            } catch (ClassNotFoundException e) {
+            } catch (ClassNotFoundException | NoSuchAlgorithmException | InvalidKeyException | SignatureException e) {
                 e.printStackTrace();
             }
         }

@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BlockChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MessageSenderRunnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MinerPOW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinerPOW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +26,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Block.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectId" id="1c20M7ITxrP7sEtpStUR1yNcTWI" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -226,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589942838691</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="some threads work done,added BlockChain class.">
+      <created>1589975107490</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1589975107490</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,22 +274,26 @@
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="336" y="78" width="732" height="637" key="#Inspections" timestamp="1589976379704">
+      <screen x="49" y="27" width="1317" height="741" />
+    </state>
+    <state x="336" y="78" width="732" height="637" key="#Inspections/49.27.1317.741@49.27.1317.741" timestamp="1589976379704" />
     <state x="149" y="125" width="1117" height="543" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589814907240">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="149" y="125" width="1117" height="543" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/49.27.1317.741@49.27.1317.741" timestamp="1589814907240" />
-    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1589846152492">
+    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1589976218747">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/49.27.1317.741@49.27.1317.741" timestamp="1589846152492" />
+    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/49.27.1317.741@49.27.1317.741" timestamp="1589976218747" />
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589813805517">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/49.27.1317.741@49.27.1317.741" timestamp="1589813805517" />
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1589942838616">
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1589975107407">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1589942838616" />
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1589975107407" />
     <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589818230231">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -295,29 +314,48 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state width="613" height="196" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1589897943216" />
-    <state x="588" y="264" width="554" height="277" key="MultipleFileMergeDialog" timestamp="1589942850735">
+    <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589975141738">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="588" y="264" width="554" height="277" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589942850735" />
+    <state x="303" y="123" width="1053" height="622" key="MergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589975141738" />
+    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog" timestamp="1589975152650">
+      <screen x="49" y="27" width="1317" height="741" />
+    </state>
+    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589975152650" />
     <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589818076991">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1589818076991" />
-    <state x="379" y="290" width="646" height="213" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589807471011">
+    <state x="379" y="290" width="646" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589976409266">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="379" y="290" width="646" height="213" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/49.27.1317.741@49.27.1317.741" timestamp="1589807471011" />
+    <state x="379" y="290" width="646" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/49.27.1317.741@49.27.1317.741" timestamp="1589976409266" />
     <state x="481" y="175" width="442" height="443" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1589807444613">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="481" y="175" width="442" height="443" key="com.intellij.testIntegration.createTest.CreateTestDialog/49.27.1317.741@49.27.1317.741" timestamp="1589807444613" />
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1589975089210">
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1589975114308">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1589975089210" />
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1589975114308" />
     <state x="49" y="27" width="1307" height="741" key="new project wizard" timestamp="1589893426932">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="49" y="27" width="1307" height="741" key="new project wizard/49.27.1317.741@49.27.1317.741" timestamp="1589893426932" />
+    <state x="403" y="154" width="598" height="485" key="refactoring.ChangeSignatureDialog" timestamp="1589975347337">
+      <screen x="49" y="27" width="1317" height="741" />
+    </state>
+    <state x="403" y="154" width="598" height="485" key="refactoring.ChangeSignatureDialog/49.27.1317.741@49.27.1317.741" timestamp="1589975347337" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Block.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
