@@ -12,29 +12,39 @@ public class Network implements Runnable {
     private ArrayList<Runnable> runnableServer;
     private ArrayList<Thread> threadServer;
     private ArrayList<Client> clients;
-    private static Network instance = null;
+    private static Network instance;
+    private static Integer SERVER_PORT;
+    private static String CLIENT1_ADDR;
+    private ServerSocket server;
 
-
-    final private Integer SERVER_PORT = 5000;
-    ServerSocket server;
-    final private String NODE1 = "127.0.0.1/5000";
-    final private String NODE2 = "127.0.0.1/6000";
-    final private String NODE3 = "127.0.0.1/7000";
-
+    public static Network getInstance(int port) {
+        if (instance == null) {
+            SERVER_PORT = port;
+            if (port == 5000) {
+                CLIENT1_ADDR = "127.0.0.1/6000";
+            } else {
+                CLIENT1_ADDR = "127.0.0.1/5000";
+            }
+            instance = new Network();
+            return instance;
+        } else {
+            return instance;
+        }
+    }
 
     public static Network getInstance() {
         if (instance == null) {
-            instance = new Network();
+            return new Network();
+        } else {
+            return instance;
         }
-        return instance;
-
     }
 
 
     private Network() {
+        peers = new HashMap<>();
         connectedDevices = new ArrayList<>();
-        connectedDevices.add(NODE2);
-        connectedDevices.add(NODE3);
+        connectedDevices.add(CLIENT1_ADDR);
 
         server = null;
         try {
@@ -47,7 +57,7 @@ public class Network implements Runnable {
 
     @Override
     public void run() {
-        Socket socket = null;
+        Socket socket;
         runnableServer = new ArrayList();
         threadServer = new ArrayList();
         while (true) {

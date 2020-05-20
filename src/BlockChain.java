@@ -1,4 +1,3 @@
-
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
@@ -9,7 +8,7 @@ public class BlockChain {
     private static final int DIFFICULTY = 3;
     private static final int BLOCK_SIZE = 100;
 
-    private static BlockChain instance = null;
+    private static final BlockChain instance = new BlockChain(BLOCK_SIZE);
 
     private HashMap<String, Block> blockChain;
     private List<Transaction> transactionPool;
@@ -31,10 +30,10 @@ public class BlockChain {
 
     public static BlockChain getInstance() {
         if (instance == null) {
-            instance = new BlockChain(BLOCK_SIZE);
+            return new BlockChain(BLOCK_SIZE);
+        } else {
+            return instance;
         }
-        return instance;
-
     }
 
     public boolean addTransaction(Transaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {

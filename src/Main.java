@@ -26,10 +26,12 @@ public class Main {
         return encodedhash;
     }
 
-    public static void main(String[] args) {
-        Network n = Network.getInstance();
+    public static void main(String[] args) throws InterruptedException {
+        //Network n = Network.getInstance(Integer.parseInt(args[0]));
+        Network n = Network.getInstance(6000);
         Thread t = new Thread(n);
         t.start();
+        Thread.sleep(2000);
         n.intiateClientConnection();
         TransactionSender txSender = new TransactionSender("txdataset_v2.txt");
         Thread tx = new Thread(txSender);
