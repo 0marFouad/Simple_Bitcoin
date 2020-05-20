@@ -20,7 +20,7 @@ public class TransactionSender implements Runnable {
 
         try {
             FileInputStream inputStream = new FileInputStream(file);
-            Scanner scan = new Scanner(inputStream, StandardCharsets.UTF_8);
+            Scanner scan = new Scanner(inputStream);
             while (scan.hasNext()) {
                 String line = scan.nextLine();
                 String[] strings = line.split("\t");

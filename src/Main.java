@@ -25,10 +25,12 @@ public class Main {
         return encodedhash;
     }
 
-    public static void main(String[] args) {
-        Network n = Network.getInstance();
+    public static void main(String[] args) throws InterruptedException {
+        //Network n = Network.getInstance(Integer.parseInt(args[0]));
+        Network n = Network.getInstance(6000);
         Thread t = new Thread(n);
         t.start();
+        Thread.sleep(2000);
         n.intiateClientConnection();
         Test test = new Test();
         test.value = 1;
