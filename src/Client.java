@@ -26,8 +26,6 @@ public class Client implements Runnable {
             socket = new Socket(address, port);
             System.out.println("Connected");
 
-            // takes input from terminal
-            input = new DataInputStream(System.in);
 
             // sends output to the socket
             out = new ObjectOutputStream(socket.getOutputStream());

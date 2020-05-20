@@ -17,8 +17,7 @@ public class Network {
     final private String NODE3 = "127.0.0.1/7000";
 
 
-
-    public Network(){
+    public Network() {
         connectedDevices = new ArrayList<>();
         connectedDevices.add(NODE1);
         connectedDevices.add(NODE2);
@@ -29,12 +28,18 @@ public class Network {
 
         threadServer.start();
 
-        for(int i=0;i<connectedDevices.size();i++){
+        for (int i = 0; i < connectedDevices.size(); i++) {
             runnableClients.add(new Client(connectedDevices.get(i)));
             threadClients.add(new Thread(runnableClients.get(i)));
         }
 
+    }
 
+    public void broadCast(Transaction transaction) {
+
+    }
+
+    public void broadCast(Block block) {
 
     }
 
