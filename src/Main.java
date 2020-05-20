@@ -28,7 +28,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         //Network n = Network.getInstance(Integer.parseInt(args[0]));
-        Network n = Network.getInstance(6000);
+        Network n = Network.getInstance(5000);
         Thread t = new Thread(n);
         t.start();
         Thread.sleep(2000);
@@ -36,7 +36,6 @@ public class Main {
         TransactionSender txSender = new TransactionSender("txdataset_v2.txt");
         Thread tx = new Thread(txSender);
         tx.start();
-//        System.out.println(System.getProperty("user.dir"));
 //        Test test = new Test();
 //        test.value = 1;
 //        n.broadcast("test", test);

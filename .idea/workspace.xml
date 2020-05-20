@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlockChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockChain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransactionSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionSender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589986486198</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="NotNull removed.">
+      <created>1589989388722</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1589989388722</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,38 +318,38 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/49.27.1317.741@49.27.1317.741" timestamp="1589813805517" />
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1589986486083">
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1589989388655">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1589986486083" />
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1589989388655" />
     <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589818230231">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1589818230231" />
-    <state width="1271" height="86" key="GridCell.Tab.0.bottom" timestamp="1589987958172">
+    <state width="537" height="230" key="GridCell.Tab.0.bottom" timestamp="1589991021459">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="86" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1589987958172" />
-    <state width="1271" height="86" key="GridCell.Tab.0.center" timestamp="1589987958171">
+    <state width="537" height="230" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1589991021459" />
+    <state width="537" height="230" key="GridCell.Tab.0.center" timestamp="1589991021458">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="86" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1589987958171" />
-    <state width="1271" height="86" key="GridCell.Tab.0.left" timestamp="1589987958171">
+    <state width="537" height="230" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1589991021458" />
+    <state width="537" height="230" key="GridCell.Tab.0.left" timestamp="1589991021458">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="86" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1589987958171" />
-    <state width="1271" height="86" key="GridCell.Tab.0.right" timestamp="1589987958171">
+    <state width="537" height="230" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1589991021458" />
+    <state width="537" height="230" key="GridCell.Tab.0.right" timestamp="1589991021459">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="86" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1589987958171" />
-    <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589986071968">
+    <state width="537" height="230" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1589991021459" />
+    <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589989446853">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="303" y="123" width="1053" height="622" key="MergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589986071968" />
-    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog" timestamp="1589986071973">
+    <state x="303" y="123" width="1053" height="622" key="MergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589989446853" />
+    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog" timestamp="1589989446855">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589986071973" />
+    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589989446855" />
     <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589986504649">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -359,14 +362,14 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="481" y="175" width="442" height="443" key="com.intellij.testIntegration.createTest.CreateTestDialog/49.27.1317.741@49.27.1317.741" timestamp="1589807444613" />
-    <state x="398" y="135" width="618" height="522" key="find.popup" timestamp="1589986460078">
+    <state x="398" y="135" width="618" height="522" key="find.popup" timestamp="1589989401470">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="398" y="135" width="618" height="522" key="find.popup/49.27.1317.741@49.27.1317.741" timestamp="1589986460078" />
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1589986028031">
+    <state x="398" y="135" width="618" height="522" key="find.popup/49.27.1317.741@49.27.1317.741" timestamp="1589989401470" />
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1589989408000">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1589986028031" />
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1589989408000" />
     <state x="49" y="27" width="1307" height="741" key="new project wizard" timestamp="1589893426932">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -381,13 +384,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Block.java</url>
-          <line>72</line>
+          <line>71</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="3" />
+          <line>34</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

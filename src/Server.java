@@ -34,7 +34,7 @@ public class Server implements Runnable {
                 String token = in.readUTF();
                 if (token.equals("tx")) {
                     Transaction tx = (Transaction) in.readObject();
-                    System.out.println(tx.inputCount);
+                    System.out.println(tx.getId());
                     // add to transaction pool
                     BlockChain.getInstance().addTransaction(tx);
                 }else if(token.equals("Block")){
