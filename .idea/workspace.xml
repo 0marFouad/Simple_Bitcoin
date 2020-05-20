@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransactionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,17 +26,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="895" />
-    <option name="y" value="94" />
-    <option name="width" value="917" />
-    <option name="height" value="789" />
-  </component>
   <component name="ProjectId" id="1c20M7ITxrP7sEtpStUR1yNcTWI" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Simple_Bitcoin3" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -74,7 +74,7 @@
       <updated>1589711329766</updated>
       <workItem from="1589711331037" duration="10311000" />
       <workItem from="1589791873915" duration="3546000" />
-      <workItem from="1589927287143" duration="7520000" />
+      <workItem from="1589927287143" duration="21174000" />
     </task>
     <task id="LOCAL-00001" summary="adding txs dummy class">
       <created>1589711677894</created>
@@ -160,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589933386847</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="refactor adding block to tree">
+      <created>1589942461541</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1589942461541</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +197,7 @@
     <MESSAGE value="adding level to block" />
     <MESSAGE value="add transactions size to block" />
     <MESSAGE value="add merkle hash function without using it" />
-    <option name="LAST_COMMIT_MESSAGE" value="add merkle hash function without using it" />
+    <MESSAGE value="refactor adding block to tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor adding block to tree" />
   </component>
 </project>
