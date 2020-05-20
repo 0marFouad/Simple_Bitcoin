@@ -110,11 +110,14 @@ public class Block implements Serializable {
             return false;
         } else {
             Block parent = blockChain.get(this.hashPrevBlock);
-            this.parent = parent;
-            parent.addChild(this);
-            level = parent.level + 1;
+            addToTree(parent);
             return true;
         }
+    }
+    public void addToTree(Block parent){
+        this.parent = parent;
+        parent.addChild(this);
+        level = parent.level +1;
     }
 
     public boolean validateTransactionSize() {
