@@ -31,7 +31,11 @@ public class BlockChain {
     }
 
     public static BlockChain getInstance() {
-        return Objects.requireNonNullElseGet(instance, () -> new BlockChain(BLOCK_SIZE));
+        if (instance == null) {
+            return new BlockChain(BLOCK_SIZE);
+        } else {
+            return instance;
+        }
     }
 
     public boolean addTransaction(@NotNull Transaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
