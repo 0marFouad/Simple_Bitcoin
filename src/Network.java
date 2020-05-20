@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Network implements Runnable {
-    static Map<Integer, KeyPair> peers;
+    static Map<Integer, KeyPair> peers = new HashMap<>();
     static ArrayList<String> connectedDevices;
     private ArrayList<Runnable> runnableServer;
     private ArrayList<Thread> threadServer;
@@ -36,7 +36,7 @@ public class Network implements Runnable {
         connectedDevices.add(NODE2);
         connectedDevices.add(NODE3);
 
-        server  = null;
+        server = null;
         try {
             server = new ServerSocket(SERVER_PORT);
         } catch (IOException e) {
@@ -50,7 +50,7 @@ public class Network implements Runnable {
         Socket socket = null;
         runnableServer = new ArrayList();
         threadServer = new ArrayList();
-        while (true){
+        while (true) {
             try {
                 socket = server.accept();
                 Runnable s = new Server(socket);
@@ -64,9 +64,9 @@ public class Network implements Runnable {
         }
     }
 
-    public void intiateClientConnection(){
+    public void intiateClientConnection() {
         clients = new ArrayList();
-        for(int i=0;i<connectedDevices.size();i++){
+        for (int i = 0; i < connectedDevices.size(); i++) {
             try {
                 clients.add(new Client(connectedDevices.get(i)));
             } catch (IOException e) {
@@ -74,9 +74,10 @@ public class Network implements Runnable {
             }
         }
     }
-    public void broadcast(String token, Object obj){
-        for(int i = 0; i< clients.size();i++){
-            clients.get(i).send(token,obj);
+
+    public void broadcast(String token, Object obj) {
+        for (int i = 0; i < clients.size(); i++) {
+            clients.get(i).send(token, obj);
         }
     }
 

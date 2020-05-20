@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TransactionSender.java" afterDir="false" />
+    <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="TransactionSender done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlockChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransactionSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionSender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.TransactionTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Simple_Bitcoin" />
@@ -80,11 +80,11 @@
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransactionTest.testGenerateTransaction2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TransactionTest.testGenerateTransaction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Simple_Bitcoin" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TransactionTest" />
-      <option name="METHOD_NAME" value="testGenerateTransaction2" />
+      <option name="METHOD_NAME" value="testGenerateTransaction" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TransactionTest" />
+        <item itemvalue="JUnit.TransactionTest.testGenerateTransaction" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="JUnit.TransactionTest" />
         <item itemvalue="JUnit.TransactionTest.testTransactionValidateInput" />
-        <item itemvalue="JUnit.TransactionTest.testGenerateTransaction2" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589977066979</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="some threads work done,added BlockChain class.">
+      <created>1589985965356</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1589985965356</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +280,8 @@
     <MESSAGE value="adding level to block" />
     <MESSAGE value="Transaction fixed, added clients map and junit test for transaction." />
     <MESSAGE value="some threads work done,added BlockChain class." />
-    <option name="LAST_COMMIT_MESSAGE" value="some threads work done,added BlockChain class." />
+    <MESSAGE value="TransactionSender done." />
+    <option name="LAST_COMMIT_MESSAGE" value="TransactionSender done." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -293,42 +301,42 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/49.27.1317.741@49.27.1317.741" timestamp="1589813805517" />
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1589977066889">
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1589986190948">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1589977066889" />
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1589986190948" />
     <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589818230231">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1589818230231" />
-    <state width="613" height="196" key="GridCell.Tab.0.bottom" timestamp="1589897943217">
+    <state width="1271" height="196" key="GridCell.Tab.0.bottom" timestamp="1589986247708">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="196" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1589897943217" />
-    <state width="613" height="196" key="GridCell.Tab.0.center" timestamp="1589897943216">
+    <state width="1271" height="196" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1589986247708" />
+    <state width="1271" height="196" key="GridCell.Tab.0.center" timestamp="1589986247707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="196" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1589897943216" />
-    <state width="613" height="196" key="GridCell.Tab.0.left" timestamp="1589897943215">
+    <state width="1271" height="196" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1589986247707" />
+    <state width="1271" height="196" key="GridCell.Tab.0.left" timestamp="1589986247706">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="196" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1589897943215" />
-    <state width="613" height="196" key="GridCell.Tab.0.right" timestamp="1589897943216">
+    <state width="1271" height="196" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1589986247706" />
+    <state width="1271" height="196" key="GridCell.Tab.0.right" timestamp="1589986247707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="196" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1589897943216" />
-    <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589975141738">
+    <state width="1271" height="196" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1589986247707" />
+    <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589986071968">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="303" y="123" width="1053" height="622" key="MergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589975141738" />
-    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog" timestamp="1589975152650">
+    <state x="303" y="123" width="1053" height="622" key="MergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589986071968" />
+    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog" timestamp="1589986071973">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589975152650" />
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589977082607">
+    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589986071973" />
+    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589986138757">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1589977082607" />
+    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1589986138757" />
     <state x="379" y="290" width="646" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589976409266">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -337,10 +345,14 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="481" y="175" width="442" height="443" key="com.intellij.testIntegration.createTest.CreateTestDialog/49.27.1317.741@49.27.1317.741" timestamp="1589807444613" />
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1589977074834">
+    <state x="398" y="135" width="618" height="522" key="find.popup" timestamp="1589985998023">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1589977074834" />
+    <state x="398" y="135" width="618" height="522" key="find.popup/49.27.1317.741@49.27.1317.741" timestamp="1589985998022" />
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1589986028031">
+      <screen x="49" y="27" width="1317" height="741" />
+    </state>
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1589986028031" />
     <state x="49" y="27" width="1307" height="741" key="new project wizard" timestamp="1589893426932">
       <screen x="49" y="27" width="1317" height="741" />
     </state>

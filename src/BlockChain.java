@@ -38,7 +38,7 @@ public class BlockChain {
         }
     }
 
-    public boolean addTransaction(@NotNull Transaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+    public boolean addTransaction(Transaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
         boolean isValid = transaction.isValidTransaction(prevTransactions);
         if (isValid) {
             processTransaction(transaction);
@@ -49,7 +49,7 @@ public class BlockChain {
         return isValid;
     }
 
-    private void updatePrevTransactions(@NotNull Transaction transaction) {
+    private void updatePrevTransactions(Transaction transaction) {
 
         for (TxInput input : transaction.inputs) {
             prevTransactions.remove(input.toString());
@@ -74,7 +74,7 @@ public class BlockChain {
             miningThread.interrupt();
     }
 
-    private void addOutputsToMap(@NotNull Transaction transaction) {
+    private void addOutputsToMap(Transaction transaction) {
 
         String key = transaction.getId() + ",";
         for (int i = 1; i <= transaction.outputs.size(); i++) {
@@ -83,7 +83,7 @@ public class BlockChain {
 
     }
 
-    public void addReceivedBlock(@NotNull Block newBlock) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
+    public void addReceivedBlock(Block newBlock) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
         List<Transaction> nonValidated = newBlock.getNonValidateTransactions(validatedTransactions);
         if (nonValidated.size() > 0)
             if (!validateTransactions(nonValidated))
@@ -100,7 +100,7 @@ public class BlockChain {
 
     }
 
-    public void addMyBlock(@NotNull Block newBlock) {
+    public void addMyBlock(Block newBlock) {
         newBlock.addToTree(maxLevelBlock);
         maxLevelBlock = newBlock;
         maxLevel = newBlock.level;
@@ -127,7 +127,7 @@ public class BlockChain {
 
     }
 
-    private boolean validateTransactions(@NotNull List<Transaction> nonValidated) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+    private boolean validateTransactions(List<Transaction> nonValidated) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
         boolean accepted = true;
         for (Transaction transaction : nonValidated) {
             if (transaction.isValidTransaction(prevTransactions)) {
@@ -139,7 +139,7 @@ public class BlockChain {
 
     }
 
-    private void processTransaction(@NotNull Transaction transaction) {
+    private void processTransaction(Transaction transaction) {
         validatedTransactions.add(transaction.getId());
         updatePrevTransactions(transaction);
         addOutputsToMap(transaction);

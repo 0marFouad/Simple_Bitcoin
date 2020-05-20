@@ -26,7 +26,7 @@ public class Block implements Serializable {
     int level = 0;
 
 
-    public Block(String hashPrevBlock, String hashMerkleRoot, @NotNull Timestamp timestamp, int nonce, List<Transaction> txList) {
+    public Block(String hashPrevBlock, String hashMerkleRoot, Timestamp timestamp, int nonce, List<Transaction> txList) {
         this.hashPrevBlock = hashPrevBlock;
         this.hashMerkleRoot = hashMerkleRoot;
         this.timestamp = timestamp;
@@ -70,7 +70,7 @@ public class Block implements Serializable {
         return this.headerHash;
     }
 
-    private String makeMerkleHash(@NotNull List<Transaction> txs) throws NoSuchAlgorithmException {
+    private String makeMerkleHash(List<Transaction> txs) throws NoSuchAlgorithmException {
         List<String> temp1 = new ArrayList();
         for (int i = 0; i < txs.size(); i++) {
             temp1.add(txs.get(i).getHash());
@@ -110,7 +110,7 @@ public class Block implements Serializable {
         children.add(child);
     }
 
-    public boolean validatePrevHeaderHash(@NotNull HashMap<String, Block> blockChain) { // must be last validation done
+    public boolean validatePrevHeaderHash(HashMap<String, Block> blockChain) { // must be last validation done
         if (!blockChain.containsKey(this.hashPrevBlock)) {
             return false;
         } else {
@@ -120,7 +120,7 @@ public class Block implements Serializable {
         }
     }
 
-    public void addToTree(@NotNull Block parent) {
+    public void addToTree(Block parent) {
         this.parent = parent;
         parent.addChild(this);
         level = parent.level + 1;

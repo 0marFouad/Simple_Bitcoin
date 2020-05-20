@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
@@ -19,14 +20,14 @@ public class TransactionSender implements Runnable {
 
         try {
             FileInputStream inputStream = new FileInputStream(file);
-            Scanner scan = new Scanner(inputStream, "UTF-8");
+            Scanner scan = new Scanner(inputStream, StandardCharsets.UTF_8);
             while (scan.hasNext()) {
                 String line = scan.nextLine();
                 String[] strings = line.split("\t");
                 Transaction transaction = new Transaction(strings);
-                //TODO Call broadcast from the network instance
+                //Call broadcast from the network instance
+                Network.getInstance().broadcast("tx", transaction);
                 Thread.sleep(2000);
-
             }
 
         } catch (
