@@ -65,6 +65,27 @@ public class Block implements Serializable {
         return this.headerHash;
     }
 
+    private  String makeMerkleHash(List <Transaction> txs) throws NoSuchAlgorithmException {
+        List <String> temp1 = new ArrayList();
+        for(int i =0;i<txs.size();i++){
+            temp1.add(txs.get(i).getHash());
+        }
+        while(temp1.size() != 1){
+            List <String> temp2  = new ArrayList<>();
+            for(int i=0;i< temp1.size();i+=2){
+                String txAcc = "";
+                txAcc += temp1.get(i);
+                if(i+1 < txs.size()){
+                    txAcc += txs.get(i + 1).getHash();
+                }else{
+                    txAcc += txs.get(i).getHash();
+                }
+                temp2.add(SHA256.hash(txAcc));
+            }
+            temp1 = temp2;
+        }
+        return temp1.get(0);
+    }
     public boolean validateHashMerkle() throws NoSuchAlgorithmException {
         String transactionHashAccu = "";
         for (int i = 0; i < txList.size(); i++) {

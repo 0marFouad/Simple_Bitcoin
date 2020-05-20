@@ -11,7 +11,7 @@ public class Network {
     private ArrayList<Runnable> runnableClients;
     private ArrayList<Thread> threadClients;
 
-    final private String SERVER_PORT = 5000;
+    final private Integer SERVER_PORT = 5000;
     final private String NODE1 = "127.0.0.1/5000";
     final private String NODE2 = "127.0.0.1/6000";
     final private String NODE3 = "127.0.0.1/7000";
@@ -24,7 +24,7 @@ public class Network {
         connectedDevices.add(NODE2);
         connectedDevices.add("127.0.0.1/7000");
 
-        runnableServer = new Server();
+        runnableServer = new Server(SERVER_PORT);
         threadServer = new Thread(runnableServer);
 
         threadServer.start();

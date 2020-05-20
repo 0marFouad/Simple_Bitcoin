@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransactionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TxInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TxInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TxOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TxOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +17,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -27,33 +24,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="895" />
+    <option name="y" value="94" />
+    <option name="width" value="917" />
+    <option name="height" value="789" />
+  </component>
   <component name="ProjectId" id="1c20M7ITxrP7sEtpStUR1yNcTWI" />
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../p2p-blockchain" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Simple_Bitcoin" />
@@ -64,59 +59,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server" />
-      <module name="Simple_Bitcoin" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TransactionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Simple_Bitcoin" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TransactionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TransactionTest.testGenerateTransaction2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Simple_Bitcoin" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TransactionTest" />
-      <option name="METHOD_NAME" value="testGenerateTransaction2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TransactionTest.testTransactionValidateInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Simple_Bitcoin" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TransactionTest" />
-      <option name="METHOD_NAME" value="testTransactionValidateInput" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="JUnit.TransactionTest" />
-        <item itemvalue="JUnit.TransactionTest.testTransactionValidateInput" />
-        <item itemvalue="JUnit.TransactionTest.testGenerateTransaction2" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1589711329766</updated>
       <workItem from="1589711331037" duration="10311000" />
-      <workItem from="1589791873915" duration="2737000" />
+      <workItem from="1589791873915" duration="3546000" />
+      <workItem from="1589927287143" duration="5898000" />
     </task>
     <task id="LOCAL-00001" summary="adding txs dummy class">
       <created>1589711677894</created>
@@ -203,21 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589794673328</updated>
     </task>
-    <task id="LOCAL-00011" summary="Transaction fixed, added clients map and junit test for transaction.">
-      <created>1589818003684</created>
+    <task id="LOCAL-00011" summary="add transactions size to block">
+      <created>1589795116051</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1589818003684</updated>
+      <updated>1589795116051</updated>
     </task>
-    <task id="LOCAL-00012" summary="some threads work done,added BlockChain class.">
-      <created>1589851824998</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1589851824998</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,12 +167,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding txs dummy class" />
@@ -244,67 +184,7 @@
     <MESSAGE value="add merkle validation" />
     <MESSAGE value="merge and push" />
     <MESSAGE value="adding level to block" />
-    <MESSAGE value="Transaction fixed, added clients map and junit test for transaction." />
-    <MESSAGE value="some threads work done,added BlockChain class." />
-    <option name="LAST_COMMIT_MESSAGE" value="some threads work done,added BlockChain class." />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="149" y="125" width="1117" height="543" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589814907240">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="149" y="125" width="1117" height="543" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/49.27.1317.741@49.27.1317.741" timestamp="1589814907240" />
-    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1589846152492">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/49.27.1317.741@49.27.1317.741" timestamp="1589846152492" />
-    <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589813805517">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/49.27.1317.741@49.27.1317.741" timestamp="1589813805517" />
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1589851824929">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1589851824929" />
-    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589818230231">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1589818230231" />
-    <state width="613" height="196" key="GridCell.Tab.0.bottom" timestamp="1589897943217">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state width="613" height="196" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1589897943217" />
-    <state width="613" height="196" key="GridCell.Tab.0.center" timestamp="1589897943216">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state width="613" height="196" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1589897943216" />
-    <state width="613" height="196" key="GridCell.Tab.0.left" timestamp="1589897943215">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state width="613" height="196" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1589897943215" />
-    <state width="613" height="196" key="GridCell.Tab.0.right" timestamp="1589897943216">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state width="613" height="196" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1589897943216" />
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1589818076991">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1589818076991" />
-    <state x="379" y="290" width="646" height="213" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589807471011">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="379" y="290" width="646" height="213" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/49.27.1317.741@49.27.1317.741" timestamp="1589807471011" />
-    <state x="481" y="175" width="442" height="443" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1589807444613">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="481" y="175" width="442" height="443" key="com.intellij.testIntegration.createTest.CreateTestDialog/49.27.1317.741@49.27.1317.741" timestamp="1589807444613" />
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1589818017708">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1589818017708" />
-    <state x="49" y="27" width="1307" height="741" key="new project wizard" timestamp="1589893426932">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="49" y="27" width="1307" height="741" key="new project wizard/49.27.1317.741@49.27.1317.741" timestamp="1589893426932" />
+    <MESSAGE value="add transactions size to block" />
+    <option name="LAST_COMMIT_MESSAGE" value="add transactions size to block" />
   </component>
 </project>
