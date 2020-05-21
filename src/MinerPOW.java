@@ -10,7 +10,6 @@ public class MinerPOW implements Runnable {
     }
 
     private void mine() {
-        System.out.println("STARTED MINING " + block.getHash());
         String hash = block.getHash();
         String bits = new BigInteger(hash, 16).toString(2);
         while (BlockChain.isRunning() && bits.length() + difficulty > 256) {

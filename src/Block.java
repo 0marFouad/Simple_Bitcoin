@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Block implements Serializable {
 
-    public static final int TransactionSize = BlockChain.getDIFFICULTY();
+    public static final int TransactionSize = BlockChain.getBlockSize();
 
     private String hashPrevBlock;
     private String hashMerkleRoot;
