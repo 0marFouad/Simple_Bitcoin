@@ -2,7 +2,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.nio.charset.StandardCharsets;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
 import java.util.Scanner;
 
 public class TransactionSender implements Runnable {
@@ -28,11 +30,16 @@ public class TransactionSender implements Runnable {
                 Transaction transaction = new Transaction(strings);
                 //Call broadcast from the network instance
                 Network.getInstance().broadcast("tx", transaction);
-                Thread.sleep(2000);
+                BlockChain.getInstance().addTransaction(transaction);
+                Thread.sleep(100);
             }
 
         } catch (
                 FileNotFoundException | NoSuchAlgorithmException | InterruptedException e) {
+            e.printStackTrace();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (SignatureException e) {
             e.printStackTrace();
         }
     }
