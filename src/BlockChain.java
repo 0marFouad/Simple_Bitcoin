@@ -153,4 +153,8 @@ public class BlockChain {
         return BLOCK_SIZE;
     }
 
+    public HashMap<String, Block> getBlockChain() {
+        return blockChain;
+    }
+
 }
