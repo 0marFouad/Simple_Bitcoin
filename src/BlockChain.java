@@ -13,7 +13,7 @@ public class BlockChain {
     private HashMap<String, Block> blockChain;
     private List<Transaction> transactionPool;
     private Map<String, TxOutput> prevTransactions;
-    private HashSet<Integer> validatedTransactions;
+    private static HashSet<Integer> validatedTransactions;
     private Block maxLevelBlock;
     private Thread miningThread;
     private final int blockSize;
@@ -155,6 +155,10 @@ public class BlockChain {
 
     public HashMap<String, Block> getBlockChain() {
         return blockChain;
+    }
+
+    public HashSet<Integer> getValidatedTransactions() {
+        return validatedTransactions;
     }
 
 }
