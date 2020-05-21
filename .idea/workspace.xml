@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590029345258</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="TransactionSender fixed.">
+      <created>1590029808254</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1590029808254</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +334,8 @@
     <MESSAGE value="NotNull removed." />
     <MESSAGE value="Transaction fixed." />
     <MESSAGE value="All flow is done." />
-    <option name="LAST_COMMIT_MESSAGE" value="All flow is done." />
+    <MESSAGE value="TransactionSender fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="TransactionSender fixed." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -347,10 +355,10 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/49.27.1317.741@49.27.1317.741" timestamp="1589813805517" />
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1590029345124">
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1590029808116">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1590029345124" />
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1590029808116" />
     <state x="149" y="125" width="1117" height="543" key="DiffContextDialog" timestamp="1589991885707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -359,22 +367,22 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1589818230231" />
-    <state width="613" height="2" key="GridCell.Tab.0.bottom" timestamp="1590017836376">
+    <state width="1271" height="429" key="GridCell.Tab.0.bottom" timestamp="1590061312379">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="2" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1590017836376" />
-    <state width="613" height="2" key="GridCell.Tab.0.center" timestamp="1590017836375">
+    <state width="1271" height="429" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1590061312379" />
+    <state width="1271" height="429" key="GridCell.Tab.0.center" timestamp="1590061312376">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="2" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1590017836375" />
-    <state width="613" height="2" key="GridCell.Tab.0.left" timestamp="1590017836374">
+    <state width="1271" height="429" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1590061312376" />
+    <state width="1271" height="429" key="GridCell.Tab.0.left" timestamp="1590061312375">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="2" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1590017836374" />
-    <state width="613" height="2" key="GridCell.Tab.0.right" timestamp="1590017836376">
+    <state width="1271" height="429" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1590061312375" />
+    <state width="1271" height="429" key="GridCell.Tab.0.right" timestamp="1590061312377">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="2" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1590017836376" />
+    <state width="1271" height="429" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1590061312377" />
     <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589989446853">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -383,10 +391,10 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589989446855" />
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1590008014138">
+    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1590029867520">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1590008014138" />
+    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1590029867520" />
     <state x="149" y="125" width="1117" height="543" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1589991885707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
