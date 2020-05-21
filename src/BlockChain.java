@@ -3,13 +3,12 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 import java.util.*;
 
-public class BlockChain {
+public class BlockChain<running> {
 
     private static final int DIFFICULTY = 3;
     private static final int BLOCK_SIZE = 100;
 
     private static BlockChain instance;
-
     private HashMap<String, Block> blockChain;
     private List<Transaction> transactionPool;
     private Map<String, TxOutput> prevTransactions;
@@ -30,10 +29,10 @@ public class BlockChain {
 
     public static BlockChain getInstance() {
         if (instance == null) {
-            return new BlockChain(BLOCK_SIZE);
-        } else {
-            return instance;
+            instance = new BlockChain(BLOCK_SIZE);
         }
+        return instance;
+
     }
 
     public boolean addTransaction(Transaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
@@ -55,21 +54,23 @@ public class BlockChain {
     }
 
     private void startMiningNewBlock() throws NoSuchAlgorithmException {
-        List<Transaction> list = transactionPool.subList(0, blockSize);
+        List<Transaction> list = new ArrayList<>(transactionPool.subList(0, blockSize));
         if (transactionPool.size() > blockSize) {
             transactionPool = transactionPool.subList(blockSize - 1, transactionPool.size());
         } else {
             transactionPool = new ArrayList<>();
         }
         Block newBlock = new Block(maxLevelBlock, list);
-        miningThread = new Thread(new MinerPOW(DIFFICULTY, newBlock));
+        Runnable runnable = new MinerPOW(DIFFICULTY, newBlock);
+        miningThread = new Thread(runnable);
         miningThread.start();
+
 
     }
 
     public void stopMining() {
         if (miningThread != null) {
-            miningThread.interrupt();
+            miningThread.stop();
             miningThread = null;
         }
     }
@@ -101,6 +102,7 @@ public class BlockChain {
     }
 
     public void addMyBlock(Block newBlock) {
+        miningThread = null;
         newBlock.addToTree(maxLevelBlock);
         maxLevelBlock = newBlock;
         maxLevel = newBlock.level;
@@ -115,15 +117,11 @@ public class BlockChain {
 
     private void removeTxFromPool(List<Transaction> txList, boolean b) {
 
-        // my block , just remove the first n transactions
-        if (b) {
-            transactionPool = transactionPool.subList(blockSize - 1, transactionPool.size());
-        } else {
-            // added block from the network , remove its transactions from the pool if it's already existed
-            for (Transaction tx : txList) {
-                transactionPool.remove(tx);
-            }
+        // added block from the network , remove its transactions from the pool if it's already existed
+        for (Transaction tx : txList) {
+            transactionPool.remove(tx);
         }
+
 
     }
 
