@@ -29,6 +29,7 @@ public class Server implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("STARTING SOCKET THREAD");
         while (true) {
             try {
                 String token = in.readUTF();

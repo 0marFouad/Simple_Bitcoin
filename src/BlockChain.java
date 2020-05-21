@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BlockChain {
 
-    private static final int DIFFICULTY = 5;
+    private static final int DIFFICULTY = 3;
     private static final int BLOCK_SIZE = 100;
 
     private static BlockChain instance;

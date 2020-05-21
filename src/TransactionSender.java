@@ -34,7 +34,6 @@ public class TransactionSender implements Runnable {
                 BlockChain.getInstance().addTransaction(transaction);
                 Thread.sleep(100);
             }
-
         } catch (
                 FileNotFoundException | NoSuchAlgorithmException | InterruptedException e) {
             e.printStackTrace();
