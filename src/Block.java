@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -141,9 +142,18 @@ public class Block implements Serializable {
         return txList;
     }
 
-    public boolean isValidBlock(HashMap<String, Block> blockChain) throws NoSuchAlgorithmException {
-        if (validateHashMerkle() && validateTransactionSize())
-            return validatePrevHeaderHash(blockChain);
+    public boolean isValidBFT(HashMap<String, Block> blockChain) throws NoSuchAlgorithmException {
+        return validateTransactionSize() && validatePrevHeaderHash(blockChain);
+
+    }
+
+    public boolean isValidPoW(HashMap<String, Block> blockChain) throws NoSuchAlgorithmException {
+        String bits = new BigInteger(this.getHash(), 16).toString(2);
+        if (bits.length() + BlockChain.getDIFFICULTY() > 256) {
+            if (validateHashMerkle() && validateTransactionSize()) {
+                return validatePrevHeaderHash(blockChain);
+            }
+        }
         return false;
     }
 

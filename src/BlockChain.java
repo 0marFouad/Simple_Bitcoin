@@ -96,7 +96,7 @@ public class BlockChain {
             if (!validateTransactions(nonValidated))
                 return;
         }
-        if (newBlock.isValidBlock(blockChain)) {
+        if (newBlock.isValidPoW(blockChain)) {
             if (newBlock.level > maxLevel) {
                 stopMining();
                 maxLevel = newBlock.level;
@@ -131,7 +131,7 @@ public class BlockChain {
 
     }
 
-    private boolean validateTransactions(List<Transaction> nonValidated) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+    public boolean validateTransactions(List<Transaction> nonValidated) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
         boolean accepted = true;
         for (Transaction transaction : nonValidated) {
             if (transaction.isValidTransaction(prevTransactions)) {
