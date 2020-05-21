@@ -18,6 +18,7 @@ public class BlockChain {
     private Thread miningThread;
     private final int blockSize;
     int maxLevel;
+    boolean isPOW;
 
     private BlockChain(int blockSize) {
         this.blockSize = blockSize;
@@ -30,10 +31,10 @@ public class BlockChain {
 
     public static BlockChain getInstance() {
         if (instance == null) {
-            return new BlockChain(BLOCK_SIZE);
-        } else {
-            return instance;
+            instance = new BlockChain(BLOCK_SIZE);
         }
+        return instance;
+
     }
 
     public boolean addTransaction(Transaction transaction) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
@@ -55,13 +56,14 @@ public class BlockChain {
     }
 
     private void startMiningNewBlock() throws NoSuchAlgorithmException {
-        List<Transaction> list = transactionPool.subList(0, blockSize);
+        List<Transaction> list = new ArrayList<>(transactionPool.subList(0, blockSize));
         if (transactionPool.size() > blockSize) {
             transactionPool = transactionPool.subList(blockSize - 1, transactionPool.size());
         } else {
             transactionPool = new ArrayList<>();
         }
         Block newBlock = new Block(maxLevelBlock, list);
+
         miningThread = new Thread(new MinerPOW(DIFFICULTY, newBlock));
         miningThread.start();
 
@@ -101,6 +103,7 @@ public class BlockChain {
     }
 
     public void addMyBlock(Block newBlock) {
+        miningThread = null;
         newBlock.addToTree(maxLevelBlock);
         maxLevelBlock = newBlock;
         maxLevel = newBlock.level;
@@ -115,14 +118,9 @@ public class BlockChain {
 
     private void removeTxFromPool(List<Transaction> txList, boolean b) {
 
-        // my block , just remove the first n transactions
-        if (b) {
-            transactionPool = transactionPool.subList(blockSize - 1, transactionPool.size());
-        } else {
-            // added block from the network , remove its transactions from the pool if it's already existed
-            for (Transaction tx : txList) {
-                transactionPool.remove(tx);
-            }
+        // added block from the network , remove its transactions from the pool if it's already existed
+        for (Transaction tx : txList) {
+            transactionPool.remove(tx);
         }
 
     }

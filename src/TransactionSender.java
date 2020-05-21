@@ -28,6 +28,7 @@ public class TransactionSender implements Runnable {
                 String line = scan.nextLine();
                 String[] strings = line.split("\t");
                 Transaction transaction = new Transaction(strings);
+                transaction.setSignature();
                 //Call broadcast from the network instance
                 Network.getInstance().broadcast("tx", transaction);
                 BlockChain.getInstance().addTransaction(transaction);

@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         //Network n = Network.getInstance(Integer.parseInt(args[0]));
-        Network n = Network.getInstance(5000);
+        Network n = Network.getInstance(6000);
         Thread t = new Thread(n);
         t.start();
         n.intiateClientConnection();

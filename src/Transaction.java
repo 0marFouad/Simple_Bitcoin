@@ -64,7 +64,6 @@ public class Transaction implements Serializable {
         for (int i = 0; i < inputCount; i++) {
             if (inputs.get(i).getPrevTransactionId() == 0)
                 continue;
-            boolean verifyInput = this.verifySenderInput(txMap, inputs.get(i));
 
             if (this.verifyDoublySpent(txMap, inputs.get(i))) {
                 if (this.verifySenderInput(txMap, inputs.get(i)))
@@ -90,7 +89,7 @@ public class Transaction implements Serializable {
     }
 
     public boolean verifySignature() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
-        PublicKey publicKey = Network.peers.get(senderIndex).getPublic();
+        PublicKey publicKey = this.sender;
 
         Signature sign = Signature.getInstance("SHA256withRSA");
         byte[] bytes = this.getHash().getBytes();

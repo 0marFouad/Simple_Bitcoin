@@ -3,11 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BlockChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransactionSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionSender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -23,7 +31,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/Block.java" root0="SKIP_INSPECTION" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1c20M7ITxrP7sEtpStUR1yNcTWI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -35,8 +50,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../p2p-blockchain" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Blockchain/Simple_Bitcoin" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
@@ -132,6 +150,7 @@
       <updated>1589711329766</updated>
       <workItem from="1589711331037" duration="10311000" />
       <workItem from="1589791873915" duration="2737000" />
+      <workItem from="1590061491213" duration="3733000" />
     </task>
     <task id="LOCAL-00001" summary="adding txs dummy class">
       <created>1589711677894</created>
@@ -301,11 +320,18 @@
       <option name="project" value="LOCAL" />
       <updated>1590029808254</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="TransactionSender fixed.">
+      <created>1590061510320</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1590061510320</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -355,34 +381,34 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/49.27.1317.741@49.27.1317.741" timestamp="1589813805517" />
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1590029808116">
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1590061510137">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1590029808116" />
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1590061510137" />
     <state x="149" y="125" width="1117" height="543" key="DiffContextDialog" timestamp="1589991885707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="149" y="125" width="1117" height="543" key="DiffContextDialog/49.27.1317.741@49.27.1317.741" timestamp="1589991885707" />
-    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589818230231">
+    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590061608730">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1589818230231" />
-    <state width="1271" height="429" key="GridCell.Tab.0.bottom" timestamp="1590061312379">
+    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1590061608730" />
+    <state width="613" height="116" key="GridCell.Tab.0.bottom" timestamp="1590065006708">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="429" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1590061312379" />
-    <state width="1271" height="429" key="GridCell.Tab.0.center" timestamp="1590061312376">
+    <state width="613" height="116" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1590065006708" />
+    <state width="613" height="116" key="GridCell.Tab.0.center" timestamp="1590065006704">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="429" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1590061312376" />
-    <state width="1271" height="429" key="GridCell.Tab.0.left" timestamp="1590061312375">
+    <state width="613" height="116" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1590065006704" />
+    <state width="613" height="116" key="GridCell.Tab.0.left" timestamp="1590065006696">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="429" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1590061312375" />
-    <state width="1271" height="429" key="GridCell.Tab.0.right" timestamp="1590061312377">
+    <state width="613" height="116" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1590065006696" />
+    <state width="613" height="116" key="GridCell.Tab.0.right" timestamp="1590065006707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="1271" height="429" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1590061312377" />
+    <state width="613" height="116" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1590065006707" />
     <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589989446853">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -411,10 +437,10 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="398" y="135" width="618" height="522" key="find.popup/49.27.1317.741@49.27.1317.741" timestamp="1590007280997" />
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1590029393666">
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1590061516326">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1590029393666" />
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1590061516326" />
     <state x="49" y="27" width="1307" height="741" key="new project wizard" timestamp="1589893426932">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -429,7 +455,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Block.java</url>
-          <line>71</line>
+          <line>74</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -438,11 +464,43 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <condition expression="this.getId() == 66" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/Transaction.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="15" />
+          <line>86</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Block.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="transactionPool.size() &gt; 100" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="Network.peers" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

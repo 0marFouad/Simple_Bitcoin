@@ -31,6 +31,7 @@ public class Block implements Serializable {
         this.nonce = nonce;
         this.txList = txList;
         headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
+        children = new ArrayList<>();
     }
 
     public Block(Block previous, List<Transaction> txList) throws NoSuchAlgorithmException { // transaction list must be validated
@@ -48,6 +49,8 @@ public class Block implements Serializable {
             transactionHashAccu += txList.get(i).getHash();
         }
         hashMerkleRoot = SHA256.hash(transactionHashAccu);
+        headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
+        children = new ArrayList<>();
 
     }
 
@@ -119,9 +122,14 @@ public class Block implements Serializable {
     }
 
     public void addToTree(Block parent) {
-        this.parent = parent;
-        parent.addChild(this);
-        level = parent.level + 1;
+        if (parent != null) {
+            this.parent = parent;
+            parent.addChild(this);
+            level = parent.level + 1;
+        } else {
+            this.parent = parent;
+            level = 1;
+        }
     }
 
     public boolean validateTransactionSize() {
