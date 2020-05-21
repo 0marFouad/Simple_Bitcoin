@@ -3,12 +3,13 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 import java.util.*;
 
-public class BlockChain<running> {
+public class BlockChain {
 
     private static final int DIFFICULTY = 3;
     private static final int BLOCK_SIZE = 100;
 
     private static BlockChain instance;
+
     private HashMap<String, Block> blockChain;
     private List<Transaction> transactionPool;
     private Map<String, TxOutput> prevTransactions;
@@ -17,6 +18,7 @@ public class BlockChain<running> {
     private Thread miningThread;
     private final int blockSize;
     int maxLevel;
+    boolean isPOW;
 
     private BlockChain(int blockSize) {
         this.blockSize = blockSize;
@@ -61,16 +63,15 @@ public class BlockChain<running> {
             transactionPool = new ArrayList<>();
         }
         Block newBlock = new Block(maxLevelBlock, list);
-        Runnable runnable = new MinerPOW(DIFFICULTY, newBlock);
-        miningThread = new Thread(runnable);
-        miningThread.start();
 
+        miningThread = new Thread(new MinerPOW(DIFFICULTY, newBlock));
+        miningThread.start();
 
     }
 
     public void stopMining() {
         if (miningThread != null) {
-            miningThread.stop();
+            miningThread.interrupt();
             miningThread = null;
         }
     }
@@ -121,7 +122,6 @@ public class BlockChain<running> {
         for (Transaction tx : txList) {
             transactionPool.remove(tx);
         }
-
 
     }
 

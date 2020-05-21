@@ -2,7 +2,6 @@ import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,7 +51,6 @@ public class Block implements Serializable {
         hashMerkleRoot = SHA256.hash(transactionHashAccu);
         headerHash = SHA256.hash(hashPrevBlock + hashMerkleRoot + timestamp.toString() + nonce);
         children = new ArrayList<>();
-
 
     }
 
@@ -127,7 +125,6 @@ public class Block implements Serializable {
         if (parent != null) {
             this.parent = parent;
             parent.addChild(this);
-            level = parent.level + 1;
         } else {
             this.parent = parent;
             level = 1;
