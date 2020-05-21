@@ -13,26 +13,24 @@ public class MinerPOW implements Runnable {
         System.out.println("STARTED MINING " + block.getHash());
         String hash = block.getHash();
         String bits = new BigInteger(hash, 16).toString(2);
-        while (!Thread.interrupted() && bits.length() + difficulty > 256) {
+        while (BlockChain.isRunning() && bits.length() + difficulty > 256) {
             block.incrementNonce();
             hash = block.getHash();
             bits = new BigInteger(hash, 16).toString(2);
         }
-        //TODO broadcast Done
-        Network.getInstance().broadcast("Block", block);
-        //add to chain
-        BlockChain.getInstance().addMyBlock(block);
+        if (BlockChain.isRunning()) {
+            //TODO broadcast Done
+            Network.getInstance().broadcast("Block", block);
+            //add to chain
+            BlockChain.getInstance().addMyBlock(block);
+        }
     }
 
 
     private boolean isValid() {
         String hash = block.getHash();
         String bits = new BigInteger(hash, 16).toString(2);
-        String target = "";
-        for (int i = 0; i < difficulty; i++) {
-            target += '0';
-        }
-        return bits.substring(0, difficulty).equals(target);
+        return bits.length() + difficulty > 256;
     }
 
 

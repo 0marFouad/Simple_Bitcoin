@@ -10,6 +10,8 @@ public class BlockChain {
 
     private static BlockChain instance;
 
+
+    private volatile static boolean running = false;
     private HashMap<String, Block> blockChain;
     private List<Transaction> transactionPool;
     private Map<String, TxOutput> prevTransactions;
@@ -42,10 +44,15 @@ public class BlockChain {
         if (isValid) {
             processTransaction(transaction);
             transactionPool.add(transaction);
-            if (miningThread == null && transactionPool.size() >= blockSize)
+            if (!running && transactionPool.size() >= blockSize)
                 this.startMiningNewBlock();
         }
         return isValid;
+    }
+
+
+    public static boolean isRunning() {
+        return running;
     }
 
     private void updatePrevTransactions(Transaction transaction) {
@@ -63,17 +70,15 @@ public class BlockChain {
             transactionPool = new ArrayList<>();
         }
         Block newBlock = new Block(maxLevelBlock, list);
-
+        running = true;
         miningThread = new Thread(new MinerPOW(DIFFICULTY, newBlock));
         miningThread.start();
 
     }
 
     public void stopMining() {
-        if (miningThread != null) {
-            miningThread.interrupt();
-            miningThread = null;
-        }
+        running = false;
+
     }
 
     private void addOutputsToMap(Transaction transaction) {
@@ -87,9 +92,10 @@ public class BlockChain {
 
     public void addReceivedBlock(Block newBlock) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
         List<Transaction> nonValidated = newBlock.getNonValidateTransactions(validatedTransactions);
-        if (nonValidated.size() > 0)
+        if (nonValidated.size() > 0) {
             if (!validateTransactions(nonValidated))
                 return;
+        }
         if (newBlock.isValidBlock(blockChain)) {
             if (newBlock.level > maxLevel) {
                 stopMining();
@@ -103,7 +109,7 @@ public class BlockChain {
     }
 
     public void addMyBlock(Block newBlock) {
-        miningThread = null;
+        running = false;
         newBlock.addToTree(maxLevelBlock);
         maxLevelBlock = newBlock;
         maxLevel = newBlock.level;
