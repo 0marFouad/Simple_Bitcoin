@@ -17,10 +17,10 @@ public class Main {
         Thread t = new Thread(n);
         t.start();
         Thread.sleep(2000);
-        n.intiateClientConnection();
-        TransactionSender txSender = new TransactionSender("txdataset_v2.txt");
-        Thread tx = new Thread(txSender);
-        tx.start();
+//        n.intiateClientConnection();
+//        TransactionSender txSender = new TransactionSender("txdataset_v2.txt");
+//        Thread tx = new Thread(txSender);
+//        tx.start();
 
 //        Test test = new Test();
 //        test.value = 1;
