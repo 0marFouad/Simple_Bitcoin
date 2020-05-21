@@ -5,9 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BlockChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockChain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransactionSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionSender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +148,7 @@
       <workItem from="1589711331037" duration="10311000" />
       <workItem from="1589791873915" duration="2737000" />
       <workItem from="1590061491213" duration="3733000" />
+      <workItem from="1590066613564" duration="1254000" />
     </task>
     <task id="LOCAL-00001" summary="adding txs dummy class">
       <created>1589711677894</created>
@@ -393,22 +391,22 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1590061608730" />
-    <state width="613" height="116" key="GridCell.Tab.0.bottom" timestamp="1590065006708">
+    <state width="613" height="348" key="GridCell.Tab.0.bottom" timestamp="1590067156402">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="116" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1590065006708" />
-    <state width="613" height="116" key="GridCell.Tab.0.center" timestamp="1590065006704">
+    <state width="613" height="348" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1590067156402" />
+    <state width="613" height="348" key="GridCell.Tab.0.center" timestamp="1590067156401">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="116" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1590065006704" />
-    <state width="613" height="116" key="GridCell.Tab.0.left" timestamp="1590065006696">
+    <state width="613" height="348" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1590067156401" />
+    <state width="613" height="348" key="GridCell.Tab.0.left" timestamp="1590067156401">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="116" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1590065006696" />
-    <state width="613" height="116" key="GridCell.Tab.0.right" timestamp="1590065006707">
+    <state width="613" height="348" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1590067156401" />
+    <state width="613" height="348" key="GridCell.Tab.0.right" timestamp="1590067156402">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="613" height="116" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1590065006707" />
+    <state width="613" height="348" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1590067156402" />
     <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589989446853">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -470,11 +468,6 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Block.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
           <line>70</line>
           <option name="timeStamp" value="20" />
@@ -483,17 +476,6 @@
           <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
           <line>57</line>
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="transactionPool.size() &gt; 100" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
