@@ -23,20 +23,20 @@ public class MinerPOW implements Runnable {
 
         // get difference of two nanoTime values
         if (BlockChain.isRunning()) {
+            System.out.println("Mining completed");
             System.out.println("time Elapsed " + (endTime - startTime));
             //TODO broadcast Done
             Network.getInstance().broadcast("Block", block);
             //add to chain
             BlockChain.getInstance().addMyBlock(block);
-            System.out.println("Mining completed");
         }
     }
 
 
-    private boolean isValid() {
+    public static boolean isValid(Block block, int difficulty) {
         String hash = block.getHash();
         String bits = new BigInteger(hash, 16).toString(2);
-        return bits.length() + difficulty > 256;
+        return bits.length() + difficulty <= 256;
     }
 
 
