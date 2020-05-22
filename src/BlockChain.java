@@ -8,6 +8,7 @@ public class BlockChain {
     private static final int DIFFICULTY = 5;
     private static final int BLOCK_SIZE = 800;
 
+    private int BLOCK_PRINT_THRESHOLD = 5;
     private static BlockChain instance;
 
 
@@ -109,8 +110,7 @@ public class BlockChain {
         }
         addToChainMap(newBlock);
         removeTxFromPool(newBlock.getTxList(), false);
-        printChain();
-
+        printChain(newBlock);
     }
 
 
@@ -121,9 +121,7 @@ public class BlockChain {
         maxLevel = newBlock.level;
         addToChainMap(newBlock);
         removeTxFromPool(newBlock.getTxList(), true);
-        printChain();
-
-
+        printChain(newBlock);
     }
 
     private void addToChainMap(Block newBlock) {
@@ -151,13 +149,19 @@ public class BlockChain {
 
     }
 
-    private void printChain() {
+    private void printChain(Block newBlock) {
 //        Block current = maxLevelBlock;
 //        while (current != null) {
 //            System.out.print(current.level + " -> ");
 //            current = current.getParent();
 //        }
 //        System.out.println();
+        if (maxLevel == BLOCK_PRINT_THRESHOLD) {
+            System.out.println("Start printing chain");
+            BLOCK_PRINT_THRESHOLD *= 2;
+            Thread t = new Thread(new PrintBlock(newBlock));
+            t.start();
+        }
 
     }
 

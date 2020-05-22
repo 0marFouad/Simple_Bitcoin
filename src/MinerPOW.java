@@ -22,14 +22,15 @@ public class MinerPOW implements Runnable {
         long endTime = System.nanoTime();
 
         // get difference of two nanoTime values
-        System.out.println("time Elapsed " + (endTime - startTime));
         if (BlockChain.isRunning()) {
             System.out.println("Mining completed");
 
+            System.out.println("time Elapsed " + (endTime - startTime));
             //TODO broadcast Done
             Network.getInstance().broadcast("Block", block);
             //add to chain
             BlockChain.getInstance().addMyBlock(block);
+            System.out.println("Mining completed");
         }
     }
 
