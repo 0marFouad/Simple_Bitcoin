@@ -12,6 +12,7 @@ import java.util.List;
 public class Block implements Serializable {
 
     public static final int TransactionSize = BlockChain.getBlockSize();
+    private static final long serialVersionUID = 6529685098267757690L;
 
     private String hashPrevBlock;
     private String hashMerkleRoot;
@@ -19,7 +20,9 @@ public class Block implements Serializable {
     private String headerHash;
     private int nonce = 0;
     boolean state = false;
+
     private Block parent;
+
     private ArrayList<Block> children;
     private List<Transaction> txList;
     int level = 0;
@@ -169,4 +172,14 @@ public class Block implements Serializable {
         return list;
 
     }
+
+    public Block getParent() {
+        return parent;
+    }
+
+
+    public ArrayList<Block> getChildren() {
+        return children;
+    }
+
 }

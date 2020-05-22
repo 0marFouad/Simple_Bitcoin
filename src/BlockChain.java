@@ -5,8 +5,8 @@ import java.util.*;
 
 public class BlockChain {
 
-    private static final int DIFFICULTY = 0;
-    private static final int BLOCK_SIZE = 100;
+    private static final int DIFFICULTY = 3;
+    private static final int BLOCK_SIZE = 800;
 
     private static BlockChain instance;
 
@@ -101,12 +101,16 @@ public class BlockChain {
                 stopMining();
                 maxLevel = newBlock.level;
                 maxLevelBlock = newBlock;
+            } else {
+                System.out.println("new Block repeated with level " + newBlock.level);
             }
         }
         addToChainMap(newBlock);
         removeTxFromPool(newBlock.getTxList(), false);
+        printChain();
 
     }
+
 
     public void addMyBlock(Block newBlock) {
         running = false;
@@ -115,6 +119,8 @@ public class BlockChain {
         maxLevel = newBlock.level;
         addToChainMap(newBlock);
         removeTxFromPool(newBlock.getTxList(), true);
+        printChain();
+
 
     }
 
@@ -140,6 +146,16 @@ public class BlockChain {
                 accepted = false;
         }
         return accepted;
+
+    }
+
+    private void printChain() {
+//        Block current = maxLevelBlock;
+//        while (current != null) {
+//            System.out.print(current.level + " -> ");
+//            current = current.getParent();
+//        }
+//        System.out.println();
 
     }
 

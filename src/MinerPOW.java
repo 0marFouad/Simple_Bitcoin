@@ -12,16 +12,23 @@ public class MinerPOW implements Runnable {
     private void mine() {
         String hash = block.getHash();
         String bits = new BigInteger(hash, 16).toString(2);
+        long startTime = System.nanoTime();
+
         while (BlockChain.isRunning() && bits.length() + difficulty > 256) {
             block.incrementNonce();
             hash = block.getHash();
             bits = new BigInteger(hash, 16).toString(2);
         }
+        long endTime = System.nanoTime();
+
+        // get difference of two nanoTime values
+        System.out.println("time Elapsed " + (endTime - startTime));
         if (BlockChain.isRunning()) {
             //TODO broadcast Done
             Network.getInstance().broadcast("Block", block);
             //add to chain
             BlockChain.getInstance().addMyBlock(block);
+            System.out.println("Mining completed");
         }
     }
 
