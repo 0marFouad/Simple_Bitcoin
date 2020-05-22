@@ -40,7 +40,6 @@ public class Server implements Runnable {
                     boolean accepted = BlockChain.getInstance().addTransaction(tx);
                 } else if (token.equals("Block")) {
                     Block block = (Block) in.readObject();
-                    System.out.println("Block Received" + block.level);
                     // add to object pool
                     BlockChain.getInstance().addReceivedBlock(block);
                 } else {

@@ -151,11 +151,10 @@ public class Block implements Serializable {
     }
 
     public boolean isValidPoW(HashMap<String, Block> blockChain) throws NoSuchAlgorithmException {
-        String bits = new BigInteger(this.getHash(), 16).toString(2);
-        if (bits.length() + BlockChain.getDIFFICULTY() > 256) {
-            if (validateHashMerkle() && validateTransactionSize()) {
+
+        if (MinerPOW.isValid(this, BlockChain.getDIFFICULTY())) {
+            if (validateHashMerkle())
                 return validatePrevHeaderHash(blockChain);
-            }
         }
         return false;
     }

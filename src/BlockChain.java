@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BlockChain {
 
-    private static final int DIFFICULTY = 3;
+    private static final int DIFFICULTY = 5;
     private static final int BLOCK_SIZE = 800;
 
     private static BlockChain instance;
@@ -25,6 +25,7 @@ public class BlockChain {
     private BlockChain(int blockSize) {
         this.blockSize = blockSize;
         blockChain = new HashMap<>();
+        blockChain.put("", null);
         transactionPool = new LinkedList<>();
         prevTransactions = new HashMap<>();
         validatedTransactions = new HashSet<>();
@@ -97,6 +98,7 @@ public class BlockChain {
                 return;
         }
         if (newBlock.isValidPoW(blockChain)) {
+            System.out.println("Block Received " + newBlock.level + "    " + newBlock.getHash());
             if (newBlock.level > maxLevel) {
                 stopMining();
                 maxLevel = newBlock.level;
