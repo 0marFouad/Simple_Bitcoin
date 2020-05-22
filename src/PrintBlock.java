@@ -17,7 +17,7 @@ public class PrintBlock implements Runnable {
     public void run() {
         File fout = new File("chain.txt");
         try {
-            FileWriter f = new FileWriter("chain.txt", true);
+            FileWriter f = new FileWriter("chain.txt");
             String line = System.getProperty("line.separator");
             Queue<Block> q = new ArrayDeque<>();
             q.add(root);
@@ -32,7 +32,7 @@ public class PrintBlock implements Runnable {
                     temp = "";
                 }
                 List<Transaction> topTxList = top.getTxList();
-                String toAdd = top.level + "(" + topTxList.get(0).getId() + ", " + topTxList.get(topTxList.size() - 1).getId() + ")    ";
+                String toAdd = top.level + "(" + topTxList.get(0).getId() + ", " + topTxList.get(topTxList.size() - 1).getId() + ", " + top.getTimestamp() + ")    ";
                 temp += toAdd;
                 List<Block> topChildren = top.getChildren();
                 System.out.println("top queue children size: " + topChildren.size());

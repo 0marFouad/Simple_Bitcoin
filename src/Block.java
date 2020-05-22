@@ -27,6 +27,9 @@ public class Block implements Serializable {
     private List<Transaction> txList;
     int level = 0;
 
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
 
     public Block(String hashPrevBlock, String hashMerkleRoot, Timestamp timestamp, int nonce, List<Transaction> txList) {
         this.hashPrevBlock = hashPrevBlock;
@@ -108,7 +111,7 @@ public class Block implements Serializable {
 
     public void addChild(Block child) {
         for (int i = 0; i < children.size(); i++) {
-            if (child != children.get(i)) {
+            if (child == children.get(i)) {
                 return;
             }
         }

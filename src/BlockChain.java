@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BlockChain {
 
-    private static final int DIFFICULTY = 3;
+    private static final int DIFFICULTY = 10;
     private static final int BLOCK_SIZE = 100;
 
     private int BLOCK_PRINT_THRESHOLD = 5;
@@ -116,12 +116,14 @@ public class BlockChain {
 
     public void addMyBlock(Block newBlock) {
         running = false;
-        newBlock.addToTree(maxLevelBlock);
-        maxLevelBlock = newBlock;
-        maxLevel = newBlock.level;
-        addToChainMap(newBlock);
-        removeTxFromPool(newBlock.getTxList(), true);
-        printChain(newBlock);
+        if (maxLevel < newBlock.level) {
+            newBlock.addToTree(maxLevelBlock);
+            maxLevelBlock = newBlock;
+            maxLevel = newBlock.level;
+            addToChainMap(newBlock);
+            removeTxFromPool(newBlock.getTxList(), true);
+            printChain(newBlock);
+        }
     }
 
     private void addToChainMap(Block newBlock) {
