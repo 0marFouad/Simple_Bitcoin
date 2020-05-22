@@ -129,6 +129,7 @@ public class Block implements Serializable {
         if (parent != null) {
             this.parent = parent;
             parent.addChild(this);
+            level = this.parent.level + 1;
         } else {
             this.parent = parent;
             level = 1;

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5d72cdb-17a4-4fa8-8cde-21df06e73bd2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PrintBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BlockChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockChain.java" afterDir="false" />
@@ -10,7 +10,6 @@
       <change beforePath="$PROJECT_DIR$/src/MinerPOW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinerPOW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransactionSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionSender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Blockchain/Simple_Bitcoin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Simple_Bitcoin2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -73,6 +72,18 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -153,8 +164,8 @@
       <updated>1589711329766</updated>
       <workItem from="1589711331037" duration="10311000" />
       <workItem from="1589791873915" duration="2737000" />
-      <workItem from="1590061613241" duration="3612000" />
-      <workItem from="1590066609905" duration="1978000" />
+      <workItem from="1590061491213" duration="3733000" />
+      <workItem from="1590066613564" duration="1254000" />
     </task>
     <task id="LOCAL-00001" summary="adding txs dummy class">
       <created>1589711677894</created>
@@ -325,27 +336,13 @@
       <updated>1590029808254</updated>
     </task>
     <task id="LOCAL-00025" summary="TransactionSender fixed.">
-      <created>1590072157551</created>
+      <created>1590061510320</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1590072157551</updated>
+      <updated>1590061510320</updated>
     </task>
-    <task id="LOCAL-00026" summary="TransactionSender fixed.">
-      <created>1590075802772</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1590075802772</updated>
-    </task>
-    <task id="LOCAL-00027" summary="TransactionSender fixed.">
-      <created>1590077191158</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1590077191158</updated>
-    </task>
-    <option name="localTasksCounter" value="28" />
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,12 +353,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding txs dummy class" />
@@ -391,66 +389,58 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="149" y="125" width="1117" height="543" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/49.27.1317.741@49.27.1317.741" timestamp="1589814907240" />
-    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1590106714882">
+    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1589985664476">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/49.27.1317.741@49.27.1317.741" timestamp="1590106714882" />
-    <state x="789" y="227" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1590076494391">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="789" y="227" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/49.27.1317.741@49.27.1317.741" timestamp="1590076494391" />
+    <state x="515" y="104" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/49.27.1317.741@49.27.1317.741" timestamp="1589985664476" />
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589813805517">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="440" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/49.27.1317.741@49.27.1317.741" timestamp="1589813805517" />
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1590077191060">
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2" timestamp="1590061510137">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1590077191060" />
+    <state x="246" y="27" width="912" height="741" key="CommitChangelistDialog2/49.27.1317.741@49.27.1317.741" timestamp="1590061510137" />
     <state x="149" y="125" width="1117" height="543" key="DiffContextDialog" timestamp="1589991885707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="149" y="125" width="1117" height="543" key="DiffContextDialog/49.27.1317.741@49.27.1317.741" timestamp="1589991885707" />
-    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590108582964">
+    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590061608730">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1590108582964" />
-    <state width="374" height="279" key="GridCell.Tab.0.bottom" timestamp="1590111067901">
+    <state x="490" y="154" width="424" height="484" key="FileChooserDialogImpl/49.27.1317.741@49.27.1317.741" timestamp="1590061608730" />
+    <state width="613" height="348" key="GridCell.Tab.0.bottom" timestamp="1590067156402">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="374" height="279" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1590111067901" />
-    <state width="374" height="279" key="GridCell.Tab.0.center" timestamp="1590111067898">
+    <state width="613" height="348" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1590067156402" />
+    <state width="613" height="348" key="GridCell.Tab.0.center" timestamp="1590067156401">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="374" height="279" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1590111067898" />
-    <state width="374" height="279" key="GridCell.Tab.0.left" timestamp="1590111067884">
+    <state width="613" height="348" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1590067156401" />
+    <state width="613" height="348" key="GridCell.Tab.0.left" timestamp="1590067156401">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="374" height="279" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1590111067884" />
-    <state width="374" height="279" key="GridCell.Tab.0.right" timestamp="1590111067899">
+    <state width="613" height="348" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1590067156401" />
+    <state width="613" height="348" key="GridCell.Tab.0.right" timestamp="1590067156402">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state width="374" height="279" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1590111067899" />
-    <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1590072270594">
+    <state width="613" height="348" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1590067156402" />
+    <state x="303" y="123" width="1053" height="622" key="MergeDialog" timestamp="1589989446853">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="303" y="123" width="1053" height="622" key="MergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1590072270594" />
-    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog" timestamp="1590072273008">
+    <state x="303" y="123" width="1053" height="622" key="MergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589989446853" />
+    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog" timestamp="1589989446855">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1590072273008" />
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1590077211442">
+    <state x="588" y="264" width="615" height="339" key="MultipleFileMergeDialog/49.27.1317.741@49.27.1317.741" timestamp="1589989446855" />
+    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1590029867520">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1590077211442" />
+    <state x="302" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1317.741@49.27.1317.741" timestamp="1590029867520" />
     <state x="149" y="125" width="1117" height="543" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1589991885707">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="149" y="125" width="1117" height="543" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/49.27.1317.741@49.27.1317.741" timestamp="1589991885707" />
-    <state x="734" y="125" width="512" height="543" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1590108303644">
-      <screen x="49" y="27" width="1317" height="741" />
-    </state>
-    <state x="734" y="125" width="512" height="543" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/49.27.1317.741@49.27.1317.741" timestamp="1590108303644" />
     <state x="379" y="290" width="646" height="229" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589976409266">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -459,14 +449,14 @@
       <screen x="49" y="27" width="1317" height="741" />
     </state>
     <state x="481" y="175" width="442" height="443" key="com.intellij.testIntegration.createTest.CreateTestDialog/49.27.1317.741@49.27.1317.741" timestamp="1589807444613" />
-    <state x="399" y="135" width="618" height="522" key="find.popup" timestamp="1590068940868">
+    <state x="398" y="135" width="618" height="522" key="find.popup" timestamp="1590007280997">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="399" y="135" width="618" height="522" key="find.popup/49.27.1317.741@49.27.1317.741" timestamp="1590068940868" />
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1590077202685">
+    <state x="398" y="135" width="618" height="522" key="find.popup/49.27.1317.741@49.27.1317.741" timestamp="1590007280997" />
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog" timestamp="1590061516326">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
-    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1590077202685" />
+    <state x="361" y="185" width="682" height="423" key="git4idea.merge.GitPullDialog/49.27.1317.741@49.27.1317.741" timestamp="1590061516326" />
     <state x="49" y="27" width="1307" height="741" key="new project wizard" timestamp="1589893426932">
       <screen x="49" y="27" width="1317" height="741" />
     </state>
@@ -488,42 +478,20 @@
           <condition expression="this.getId() == 66" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/Transaction.java</url>
           <line>87</line>
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <condition expression="maxLevel == 7" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="22" />
+          <line>77</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <condition expression="maxLevel == 7" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/BlockChain.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MinerPOW.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MinerPOW.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MinerPOW.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="27" />
+          <line>64</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo typeName="Block" fieldName="level" />
-      </pinned-members>
-    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="Network.peers" language="JAVA" />

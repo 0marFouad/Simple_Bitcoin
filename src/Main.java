@@ -11,7 +11,8 @@ import java.util.Base64;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        //Network n = Network.getInstance(Integer.parseInt(args[0]));
         Network n = Network.getInstance(5000);
         Thread t = new Thread(n);
         t.start();
@@ -19,5 +20,9 @@ public class Main {
         TransactionSender txSender = new TransactionSender("txdataset_v2.txt");
         Thread tx = new Thread(txSender);
         tx.start();
+
+//        Test test = new Test();
+//        test.value = 1;
+//        n.broadcast("test", test);
     }
 }
